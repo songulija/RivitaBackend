@@ -7,5 +7,6 @@ namespace RivitaBackend.Models
 {
     public class Transportation
     {
+        public int id { get; set; }
     }
 }
