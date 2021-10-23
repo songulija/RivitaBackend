@@ -7,5 +7,7 @@ namespace RivitaBackend.Models
 {
     public class ApiUser
     {
+        public string CompanyName { get; set; }
+        public virtual IList<Transportation> Transportations { get; set; }
     }
 }
