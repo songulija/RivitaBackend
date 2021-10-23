@@ -8,7 +8,7 @@ namespace RivitaBackend.Models
 {
     public class Transportation
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public int TransportationNumber { get; set; }
         public string Type { get; set; }
         public string DepartureStation { get; set; }
@@ -16,8 +16,8 @@ namespace RivitaBackend.Models
         public DateTime MovementStartDate { get; set; }
         public DateTime MovementEndDate { get; set; }
         public int NumberOfWagons { get; set; }
-        [ForeignKey(nameof(User))]
-        public int Userid { get; set; }
+        [ForeignKey(nameof(ApiUser))]
+        public int UserId { get; set; }
         public ApiUser User { get; set; }
     }
 }
