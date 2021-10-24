@@ -8,14 +8,36 @@ namespace RivitaBackend.Models
 {
     public class Transportation
     {
+        // General info about transportation
         public int Id { get; set; }
         public int TransportationNumber { get; set; }
-        public string Type { get; set; }
-        public string DepartureStation { get; set; }
-        public string DestinationStation { get; set; }
-        public DateTime MovementStartDate { get; set; }
-        public DateTime MovementEndDate { get; set; }
-        public int NumberOfWagons { get; set; }
+        public int Weight { get; set; }
+        public int WagonsCount { get; set; }
+        public string TransportationStatus { get; set; }
+        public string TransportationType { get; set; }
+        public int TransportationSubCode { get; set; }
+        // All Dates of Transportation
+        public DateTime CargoAcceptanceDate { get; set; }
+        public DateTime MovementStartDateInBelarus { get; set; }
+        public DateTime MovementEndDateInBelarus { get; set; }
+        // Info about Cargo(gruze)
+        public int EtsngCargoCode { get; set; }
+        public string EtsngCargoTitle { get; set; }
+        public int GngCargoCode { get; set; }
+        public string GngCargoTitle { get; set; }
+        // Information about Stations
+        public int DepartureStationCode { get; set; }
+        public string DepartureStationTitle { get; set; }
+        public int DepartureCountryCode { get; set; }
+        public string DepartureCountryTitle { get; set; }
+        public int DestinationStationCode { get; set; }
+        public string DestinationStationTitle { get; set; }
+        public int DestinationCountryCode { get; set; }
+        public string DestinationCountryTitle { get; set; }
+        public int StationMovementBeginingBelarusCode { get; set; }
+        public string StationMovementBeginingBelarusTitle { get; set; }
+        public string StationMovementEndBelarusCode { get; set; }
+        public string StationMovementEndBelarusTitle { get; set; }
         [ForeignKey(nameof(ApiUser))]
         public int UserId { get; set; }
         public ApiUser User { get; set; }
