@@ -16,5 +16,6 @@ namespace RivitaBackend.Models
         }
 
         public DbSet<Transportation> Transportations { get; set; }
+        public DbSet<Wagon> Wagons { get; set; }
     }
 }

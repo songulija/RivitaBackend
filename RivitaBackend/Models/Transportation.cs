@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,13 @@ namespace RivitaBackend.Models
     public class Transportation
     {
         // General info about transportation
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [ForeignKey(nameof(ApiUser))]
+        public int UserId { get; set; }
+        [NotMapped]
+        public ApiUser User { get; set; }
         public int TransportationNumber { get; set; }
         public int Weight { get; set; }
         public int WagonsCount { get; set; }
@@ -38,8 +45,8 @@ namespace RivitaBackend.Models
         public string StationMovementBeginingBelarusTitle { get; set; }
         public string StationMovementEndBelarusCode { get; set; }
         public string StationMovementEndBelarusTitle { get; set; }
-        [ForeignKey(nameof(ApiUser))]
-        public int UserId { get; set; }
-        public ApiUser User { get; set; }
+        // Information about Wagons. Each Transportation will have number of wagons. So its
+        // one to many relationship.
+        public virtual IList<Wagon> Wagons { get; set; }
     }
 }
