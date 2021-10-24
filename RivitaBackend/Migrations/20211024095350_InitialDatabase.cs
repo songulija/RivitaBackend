@@ -159,25 +159,66 @@ namespace RivitaBackend.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TransportationNumber = table.Column<int>(type: "int", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DepartureStation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DestinationStation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MovementStartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MovementEndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NumberOfWagons = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    UserId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    TransportationNumber = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false),
+                    WagonsCount = table.Column<int>(type: "int", nullable: false),
+                    TransportationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TransportationType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TransportationSubCode = table.Column<int>(type: "int", nullable: false),
+                    CargoAcceptanceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MovementStartDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MovementEndDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EtsngCargoCode = table.Column<int>(type: "int", nullable: false),
+                    EtsngCargoTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GngCargoCode = table.Column<int>(type: "int", nullable: false),
+                    GngCargoTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DepartureStationCode = table.Column<int>(type: "int", nullable: false),
+                    DepartureStationTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DepartureCountryCode = table.Column<int>(type: "int", nullable: false),
+                    DepartureCountryTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DestinationStationCode = table.Column<int>(type: "int", nullable: false),
+                    DestinationStationTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DestinationCountryCode = table.Column<int>(type: "int", nullable: false),
+                    DestinationCountryTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StationMovementBeginingBelarusCode = table.Column<int>(type: "int", nullable: false),
+                    StationMovementBeginingBelarusTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StationMovementEndBelarusCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StationMovementEndBelarusTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ApiUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transportations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Transportations_AspNetUsers_UserId1",
-                        column: x => x.UserId1,
+                        name: "FK_Transportations_AspNetUsers_ApiUserId",
+                        column: x => x.ApiUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Wagons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TransportationId = table.Column<int>(type: "int", nullable: false),
+                    NumberOfWagon = table.Column<int>(type: "int", nullable: false),
+                    TypeOfWagon = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LiftingCapacityTons = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wagons", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Wagons_Transportations_TransportationId",
+                        column: x => x.TransportationId,
+                        principalTable: "Transportations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -220,9 +261,14 @@ namespace RivitaBackend.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transportations_UserId1",
+                name: "IX_Transportations_ApiUserId",
                 table: "Transportations",
-                column: "UserId1");
+                column: "ApiUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wagons_TransportationId",
+                table: "Wagons",
+                column: "TransportationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -243,10 +289,13 @@ namespace RivitaBackend.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Transportations");
+                name: "Wagons");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Transportations");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

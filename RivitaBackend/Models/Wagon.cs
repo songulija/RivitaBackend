@@ -14,7 +14,7 @@ namespace RivitaBackend.Models
         public int Id { get; set; }
         // Each transportation can have many waggons
         [ForeignKey(nameof(Transportation))]
-        public int TransportationNumber { get; set; }
+        public int TransportationId { get; set; }
         [NotMapped]
         public Transportation Transportation { get; set; }
         public int NumberOfWagon { get; set; }

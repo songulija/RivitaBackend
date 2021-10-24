@@ -225,38 +225,121 @@ namespace RivitaBackend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DepartureStation")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("ApiUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DestinationStation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("MovementEndDate")
+                    b.Property<DateTime>("CargoAcceptanceDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("MovementStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("NumberOfWagons")
+                    b.Property<int>("DepartureCountryCode")
                         .HasColumnType("int");
+
+                    b.Property<string>("DepartureCountryTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartureStationCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DepartureStationTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DestinationCountryCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DestinationCountryTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DestinationStationCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DestinationStationTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EtsngCargoCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EtsngCargoTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GngCargoCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GngCargoTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("MovementEndDateInBelarus")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("MovementStartDateInBelarus")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StationMovementBeginingBelarusCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StationMovementBeginingBelarusTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StationMovementEndBelarusCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StationMovementEndBelarusTitle")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TransportationNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("TransportationStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TransportationSubCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TransportationType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId1")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("WagonsCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("ApiUserId");
 
                     b.ToTable("Transportations");
+                });
+
+            modelBuilder.Entity("RivitaBackend.Models.Wagon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("LiftingCapacityTons")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfWagon")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TransportationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TypeOfWagon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TransportationId");
+
+                    b.ToTable("Wagons");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -312,16 +395,28 @@ namespace RivitaBackend.Migrations
 
             modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>
                 {
-                    b.HasOne("RivitaBackend.Models.ApiUser", "User")
+                    b.HasOne("RivitaBackend.Models.ApiUser", null)
                         .WithMany("Transportations")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("ApiUserId");
+                });
 
-                    b.Navigation("User");
+            modelBuilder.Entity("RivitaBackend.Models.Wagon", b =>
+                {
+                    b.HasOne("RivitaBackend.Models.Transportation", null)
+                        .WithMany("Wagons")
+                        .HasForeignKey("TransportationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RivitaBackend.Models.ApiUser", b =>
                 {
                     b.Navigation("Transportations");
+                });
+
+            modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>
+                {
+                    b.Navigation("Wagons");
                 });
 #pragma warning restore 612, 618
         }
