@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RivitaBackend.Configurations;
 using RivitaBackend.Models;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,9 @@ namespace RivitaBackend
                    .AllowAnyMethod()
                    .AllowAnyHeader());
             });
+
+            // Add autoMapper. For type providing MapperInitializer that i created in Configurations
+            services.AddAutoMapper(typeof(MapperInitilizer));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
