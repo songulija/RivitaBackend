@@ -31,7 +31,7 @@ namespace RivitaBackend
         {
 
             services.AddDbContext<DatabaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("lukasConnection")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("abduConnection")));
             // adding Cors policy. so user from other networks could access our API. just adding policy with name
             //basically allowing here anybody and everybody to access this API
             services.AddCors(o =>
@@ -58,9 +58,12 @@ namespace RivitaBackend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RivitaBackend v1"));
+                
             }
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RivitaBackend v1"));
+
+            app.ConfigurExceptionHandler();
 
             app.UseHttpsRedirection();
 

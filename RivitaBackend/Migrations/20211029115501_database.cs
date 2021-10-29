@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RivitaBackend.Migrations
 {
-    public partial class InitialDatabase : Migration
+    public partial class database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -242,12 +242,12 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c725865a-e9e9-4f37-a72a-51d3f72c3a43", "4b770921-7d18-4601-b212-905916c505fa", "User", "USER" });
+                values: new object[] { "5d4ad39a-7c96-49cd-9585-1e2235f54b7c", "cbdd9327-e692-432b-b0bb-0661449af947", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "5891fe47-8720-4154-97e8-c87baee9c49f", "03d9beca-90f9-4c3a-9265-6ba7215894ca", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "28e06935-127c-4ede-908e-3c4e58368967", "a83e579a-041b-4e80-82f0-b154fef26b4a", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "Companies",
