@@ -11,10 +11,10 @@ namespace RivitaBackend.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         // Each transportation can have many waggons
         [ForeignKey(nameof(Transportation))]
-        public int TransportationId { get; set; }
+        public Guid TransportationId { get; set; }
         [NotMapped]
         public Transportation Transportation { get; set; }
         public int NumberOfWagon { get; set; }

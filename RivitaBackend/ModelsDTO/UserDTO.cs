@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RivitaBackend.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,8 +22,9 @@ namespace RivitaBackend.ModelsDTO
     /// </summary>
     public class UserDTO : LoginUserDTO
     {
-        public string CompanyName { get; set; }
         public string PhoneNumber { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
         public ICollection<string> Roles { get; set; }
         public virtual IList<TransportationDTO> Transportations { get; set; }
 

@@ -10,7 +10,7 @@ using RivitaBackend.Models;
 namespace RivitaBackend.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211024095350_InitialDatabase")]
+    [Migration("20211029105440_InitialDatabase")]
     partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,22 @@ namespace RivitaBackend.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "c725865a-e9e9-4f37-a72a-51d3f72c3a43",
+                            ConcurrencyStamp = "4b770921-7d18-4601-b212-905916c505fa",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "5891fe47-8720-4154-97e8-c87baee9c49f",
+                            ConcurrencyStamp = "03d9beca-90f9-4c3a-9265-6ba7215894ca",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -160,6 +176,9 @@ namespace RivitaBackend.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
 
@@ -209,6 +228,8 @@ namespace RivitaBackend.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CompanyId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -220,12 +241,33 @@ namespace RivitaBackend.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>
+            modelBuilder.Entity("RivitaBackend.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Rivita"
+                        });
+                });
+
+            modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ApiUserId")
                         .HasColumnType("nvarchar(450)");
@@ -299,8 +341,8 @@ namespace RivitaBackend.Migrations
                     b.Property<string>("TransportationType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("WagonsCount")
                         .HasColumnType("int");
@@ -317,10 +359,9 @@ namespace RivitaBackend.Migrations
 
             modelBuilder.Entity("RivitaBackend.Models.Wagon", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("LiftingCapacityTons")
                         .HasColumnType("int");
@@ -328,8 +369,8 @@ namespace RivitaBackend.Migrations
                     b.Property<int>("NumberOfWagon")
                         .HasColumnType("int");
 
-                    b.Property<int>("TransportationId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("TransportationId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("TypeOfWagon")
                         .HasColumnType("nvarchar(max)");
@@ -395,6 +436,15 @@ namespace RivitaBackend.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("RivitaBackend.Models.ApiUser", b =>
+                {
+                    b.HasOne("RivitaBackend.Models.Company", null)
+                        .WithMany("Users")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>
                 {
                     b.HasOne("RivitaBackend.Models.ApiUser", null)
@@ -414,6 +464,11 @@ namespace RivitaBackend.Migrations
             modelBuilder.Entity("RivitaBackend.Models.ApiUser", b =>
                 {
                     b.Navigation("Transportations");
+                });
+
+            modelBuilder.Entity("RivitaBackend.Models.Company", b =>
+                {
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("RivitaBackend.Models.Transportation", b =>

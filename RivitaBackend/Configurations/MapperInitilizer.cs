@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace RivitaBackend.Configurations
 {
     // inherit from Profile which is basically automapper
-    public class MapperInitializer : Profile
+    public class MapperInitilizer : Profile
     {
-        public MapperInitializer()
+        public MapperInitilizer()
         {
             // Transportation can map/convert to TransportationDTO, CreateTransportationDTO,UpdateTransformationDTO and vise versa
             CreateMap<Transportation, TransportationDTO>().ReverseMap();

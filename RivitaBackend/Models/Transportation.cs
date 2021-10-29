@@ -12,9 +12,9 @@ namespace RivitaBackend.Models
         // General info about transportation
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [ForeignKey(nameof(ApiUser))]
-        public int UserId { get; set; }
+        public Guid Id { get; set; }
+        [ForeignKey(nameof(User))]
+        public Guid UserId { get; set; }
         [NotMapped]
         public ApiUser User { get; set; }
         public int TransportationNumber { get; set; }
