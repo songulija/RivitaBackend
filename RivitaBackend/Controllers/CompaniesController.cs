@@ -30,7 +30,6 @@ namespace RivitaBackend.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-
         public async Task<IActionResult> GetCompanies()
         {
             var companies = await _unitOfWork.Companies.GetAll();
@@ -63,7 +62,6 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
         public async Task<IActionResult> InsertCompany([FromBody]CompanyDTO companyDTO)
         {
             //checking if provided companyDTO model fields from POST request body are valid.

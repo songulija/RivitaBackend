@@ -10,8 +10,8 @@ using RivitaBackend.Models;
 namespace RivitaBackend.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211029115501_database")]
-    partial class database
+    [Migration("20211030110758_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,15 +50,15 @@ namespace RivitaBackend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5d4ad39a-7c96-49cd-9585-1e2235f54b7c",
-                            ConcurrencyStamp = "cbdd9327-e692-432b-b0bb-0661449af947",
+                            Id = "416ead33-7183-46bf-a9a5-a6cfc80db9b6",
+                            ConcurrencyStamp = "9bdc0cd8-1e43-4c8f-9ddb-81dda8cfe1d9",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "28e06935-127c-4ede-908e-3c4e58368967",
-                            ConcurrencyStamp = "a83e579a-041b-4e80-82f0-b154fef26b4a",
+                            Id = "843ab371-96e7-499b-8874-91bc61f99140",
+                            ConcurrencyStamp = "a285ab7c-aa8e-4d10-9d5c-4795e8953dec",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

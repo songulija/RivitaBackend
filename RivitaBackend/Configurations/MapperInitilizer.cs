@@ -13,6 +13,10 @@ namespace RivitaBackend.Configurations
     {
         public MapperInitilizer()
         {
+            CreateMap<Company, CompanyDTO>().ReverseMap();
+            CreateMap<Company, CreateCompanyDTO>().ReverseMap();
+            CreateMap<Company, UpdateCompanyDTO>().ReverseMap();
+
             // Transportation can map/convert to TransportationDTO, CreateTransportationDTO,UpdateTransformationDTO and vise versa
             CreateMap<Transportation, TransportationDTO>().ReverseMap();
             CreateMap<Transportation, CreateTransportationDTO>().ReverseMap();

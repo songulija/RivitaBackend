@@ -184,3 +184,6 @@ D:\Lukai\RivitaBackend\RivitaBackend\obj\Debug\net5.0\RivitaBackend.dll
 D:\Lukai\RivitaBackend\RivitaBackend\obj\Debug\net5.0\ref\RivitaBackend.dll
 D:\Lukai\RivitaBackend\RivitaBackend\obj\Debug\net5.0\RivitaBackend.pdb
 D:\Lukai\RivitaBackend\RivitaBackend\obj\Debug\net5.0\RivitaBackend.genruntimeconfig.cache
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

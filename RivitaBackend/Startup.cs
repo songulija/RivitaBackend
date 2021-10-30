@@ -9,7 +9,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RivitaBackend.Configurations;
+using RivitaBackend.IRepository;
 using RivitaBackend.Models;
+using RivitaBackend.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +31,14 @@ namespace RivitaBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("abduConnection")));
+
+
+            services.AddAuthentication();
+            services.ConfigureIdentity();
+
+
             // adding Cors policy. so user from other networks could access our API. just adding policy with name
             //basically allowing here anybody and everybody to access this API
             services.AddCors(o =>
@@ -45,11 +52,15 @@ namespace RivitaBackend
             // Add autoMapper. For type providing MapperInitializer that i created in Configurations
             services.AddAutoMapper(typeof(MapperInitilizer));
 
-            services.AddControllers();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RivitaBackend", Version = "v1" });
             });
+            services.AddControllers().AddNewtonsoftJson(op =>
+                op.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +82,7 @@ namespace RivitaBackend
             app.UseCors("AllowAll");
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
