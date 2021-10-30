@@ -10,7 +10,7 @@ using RivitaBackend.Models;
 namespace RivitaBackend.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211030110758_InitialDatabase")]
+    [Migration("20211030124503_InitialDatabase")]
     partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,15 +50,15 @@ namespace RivitaBackend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "416ead33-7183-46bf-a9a5-a6cfc80db9b6",
-                            ConcurrencyStamp = "9bdc0cd8-1e43-4c8f-9ddb-81dda8cfe1d9",
+                            Id = "7fb38b91-8ae2-48c1-9a89-0518072b3e31",
+                            ConcurrencyStamp = "b4dc66e1-9b48-487a-a70c-492115d1522a",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "843ab371-96e7-499b-8874-91bc61f99140",
-                            ConcurrencyStamp = "a285ab7c-aa8e-4d10-9d5c-4795e8953dec",
+                            Id = "fcc3ef31-d458-4141-94f3-487593a746b8",
+                            ConcurrencyStamp = "546b5261-33ab-4d5a-8e56-35ef6395cffd",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -178,9 +178,6 @@ namespace RivitaBackend.Migrations
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
-
-                    b.Property<string>("CompanyName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()

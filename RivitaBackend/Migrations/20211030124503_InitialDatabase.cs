@@ -61,7 +61,6 @@ namespace RivitaBackend.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),
-                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -242,12 +241,12 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "416ead33-7183-46bf-a9a5-a6cfc80db9b6", "9bdc0cd8-1e43-4c8f-9ddb-81dda8cfe1d9", "User", "USER" });
+                values: new object[] { "7fb38b91-8ae2-48c1-9a89-0518072b3e31", "b4dc66e1-9b48-487a-a70c-492115d1522a", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "843ab371-96e7-499b-8874-91bc61f99140", "a285ab7c-aa8e-4d10-9d5c-4795e8953dec", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "fcc3ef31-d458-4141-94f3-487593a746b8", "546b5261-33ab-4d5a-8e56-35ef6395cffd", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "Companies",

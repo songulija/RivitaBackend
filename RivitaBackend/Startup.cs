@@ -36,6 +36,7 @@ namespace RivitaBackend
 
 
             services.AddAuthentication();
+            //calling method from ServiceExtensions to configure Identity
             services.ConfigureIdentity();
 
 

@@ -83,14 +83,14 @@ namespace RivitaBackend.Controllers
         /// <param name="id"></param>
         /// <param name="companyDTO"></param>
         /// <returns></returns>
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateCompany(int id, [FromBody]CompanyDTO companyDTO)
+        public async Task<IActionResult> UpdateCompany([FromBody] CompanyDTO companyDTO,int id)
         {
             //check if companyDTO object from body, its fields are valid
-            if (!ModelState.IsValid || id < 1)
+            if (!ModelState.IsValid || id > 1)
             {
                 _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateCompany)}");
                 return BadRequest("Submited data is invalid");

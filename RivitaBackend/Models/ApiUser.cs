@@ -13,7 +13,6 @@ namespace RivitaBackend.Models
         public int CompanyId { get; set; }
         [NotMapped]
         public Company Company { get; set; }
-        public string CompanyName { get; set; }
         public virtual IList<Transportation> Transportations { get; set; }
     }
 }
