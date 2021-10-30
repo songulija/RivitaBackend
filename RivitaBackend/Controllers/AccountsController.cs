@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RivitaBackend.Models;
 using RivitaBackend.ModelsDTO;
+using RivitaBackend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,14 @@ namespace RivitaBackend.Controllers
         private readonly UserManager<ApiUser> _userManager;
         private readonly IMapper _mapper;
         private readonly ILogger<AccountsController> _logger;
+        private readonly IAuthManager _authManager;
 
-        public AccountsController(UserManager<ApiUser> userManager, IMapper mapper, ILogger<AccountsController> logger)
+        public AccountsController(UserManager<ApiUser> userManager, IMapper mapper, ILogger<AccountsController> logger, IAuthManager authManager)
         {
             _userManager = userManager;
             _mapper = mapper;
             _logger = logger;
+            _authManager = authManager;
         }
 
         /// <summary>
@@ -75,9 +78,25 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> LoginUser([FromBody]UserDTO userDTO)
         {
-            return Accepted();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //ValidateUser returns true or false
+            var validUser = await _authManager.ValidateUser(userDTO);
+            if(validUser == false)
+            {
+                return Unauthorized();
+            }
+
+            //return anything in 200 range. means it was succesful
+            // return new object iwth an expression called Token. It'lll equal to
+            // authManager method CrateToken which will return Token
+
+            return Accepted(new { Token = await _authManager.CreateToken()});
         }
 
     }

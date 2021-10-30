@@ -1,14 +1,18 @@
 ﻿
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using RivitaBackend.Models;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace RivitaBackend
@@ -28,6 +32,40 @@ namespace RivitaBackend
             //passing DatabaseContext that we are using as our database and AddDefaultToken
             builder.AddEntityFrameworkStores<DatabaseContext>().AddDefaultTokenProviders();
         }
+
+        // Configuration for JWT in Startup . We also need IConfiguration
+        public static void ConfigureJWT(this IServiceCollection services, IConfiguration Configuration)
+        {
+            //getting 'JWT" section from appsettings.json
+            var jwtSettings = Configuration.GetSection("Jwt");
+            //getting key that i set with Command Line
+            var key = Environment.GetEnvironmentVariable("KEY");
+
+            //basically adding authentication to app. and default scheme that i want  is JWT
+            //when somebody tires to authenticate check for bearer token
+            //then i set up parameters. ValidatieIssuer means we want to validate token. validate lifetime
+            //and issuer key. Then we set ValidIssuer for any JWT token will be string from appsettings.json
+            //then goes key that we hash. most important thing dont put key in appsettings.json
+            //based on your situation you may need more validation
+            //VALIDATE AUDIENCE TOO. to validate users
+            services.AddAuthentication(o =>
+            {
+                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings.GetSection("Issuer").Value,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                };
+            });
+        }
+
         public  static void ConfigurExceptionHandler(this IApplicationBuilder app)
         {
             app.UseExceptionHandler(error => {

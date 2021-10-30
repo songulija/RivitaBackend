@@ -12,6 +12,7 @@ using RivitaBackend.Configurations;
 using RivitaBackend.IRepository;
 using RivitaBackend.Models;
 using RivitaBackend.Repository;
+using RivitaBackend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +33,14 @@ namespace RivitaBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DatabaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("abduConnection")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("lukasConnection")));
 
 
             services.AddAuthentication();
             //calling method from ServiceExtensions to configure Identity
             services.ConfigureIdentity();
+            //Configuration for JWT from ServiceExtensions. It requers to pass Configuration
+            services.ConfigureJWT(Configuration);
 
 
             // adding Cors policy. so user from other networks could access our API. just adding policy with name
@@ -54,6 +57,8 @@ namespace RivitaBackend
             services.AddAutoMapper(typeof(MapperInitilizer));
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            //adding new serivice. IAuthManager mapped to AuthManager. AuthManager has methods implementation.
+            services.AddScoped<IAuthManager, AuthManager>();
 
             services.AddSwaggerGen(c =>
             {
