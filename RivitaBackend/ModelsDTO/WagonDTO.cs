@@ -32,7 +32,7 @@ namespace RivitaBackend.ModelsDTO
     /// </summary>
     public class WagonDTO : CreateWagonDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public TransportationDTO Transportation { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using RivitaBackend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RivitaBackend.Controllers
@@ -28,6 +30,18 @@ namespace RivitaBackend.Controllers
             _mapper = mapper;
             _logger = logger;
             _authManager = authManager;
+        }
+
+        [Authorize]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetUserId()
+        {
+            Console.WriteLine("ITS HERERERER");
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            return Ok(userId);
         }
 
         /// <summary>
@@ -96,7 +110,7 @@ namespace RivitaBackend.Controllers
             // return new object iwth an expression called Token. It'lll equal to
             // authManager method CrateToken which will return Token
 
-            return Accepted(new { Token = await _authManager.CreateToken()});
+            return Accepted(new { Token = await _authManager.CreateToken(), Email = userDTO.Email });
         }
 
     }

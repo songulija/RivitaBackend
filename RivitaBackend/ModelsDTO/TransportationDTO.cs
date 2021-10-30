@@ -12,7 +12,7 @@ namespace RivitaBackend.ModelsDTO
     public class CreateTransportationDTO
     {
         [Required]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         [Required]
         public int TransportationNumber { get; set; }
         [Required]
@@ -78,7 +78,7 @@ namespace RivitaBackend.ModelsDTO
     /// </summary>
     public class TransportationDTO : CreateTransportationDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public UserDTO ApiUser { get; set; }
         public virtual IList<WagonDTO> Wagons { get; set; }
 
