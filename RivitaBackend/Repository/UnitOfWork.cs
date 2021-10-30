@@ -13,6 +13,7 @@ namespace RivitaBackend.Repository
         private readonly DatabaseContext _context;
         private IGenericRepository<Transportation> _transportations;
         private IGenericRepository<Wagon> _wagons;
+        private IGenericRepository<Company> _companies;
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -23,6 +24,7 @@ namespace RivitaBackend.Repository
         public IGenericRepository<Transportation> Transportations => _transportations ??= new GenericRepository<Transportation>(_context);
 
         public IGenericRepository<Wagon> Wagons => _wagons ??= new GenericRepository<Wagon>(_context);
+        public IGenericRepository<Company> Companies => _companies ??= new GenericRepository<Company>(_context);
         // garbage collector
         public void Dispose()
         {
