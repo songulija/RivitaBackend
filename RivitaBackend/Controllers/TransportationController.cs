@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace RivitaBackend.Controllers
 {
-    public class WagonsController : Controller
+    public class TransportationController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly ILogger<WagonsController> _logger;
+        private readonly ILogger<TransportationController> _logger;
 
-        public WagonsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<WagonsController> logger)
+        public TransportationController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<TransportationController> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -28,22 +28,22 @@ namespace RivitaBackend.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetWagons()
+        public async Task<IActionResult> GetTransportations()
         {
-            var wagons = await _unitOfWork.Wagons.GetAll();
-            var results = _mapper.Map<IList<WagonDTO>>(wagons);
+            var transportations = await _unitOfWork.Transportations.GetAll();
+            var results = _mapper.Map<IList<TransportationDTO>>(transportations);
             return Ok(results);
 
         }
 
-        [HttpGet("{id:Guid}")]
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetWagon(Guid id)
+        public async Task<IActionResult> GetTransportation(Guid id)
         {
-            var wagon = await _unitOfWork.Wagons.Get(w => w.Id == id);
+            var transportation = await _unitOfWork.Transportations.Get(w => w.Id == id);
 
-            var result = _mapper.Map<WagonDTO>(wagon);
+            var result = _mapper.Map<TransportationDTO>(transportation);
             return Ok(result);
         }
 
@@ -52,7 +52,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> InsertWagon([FromBody] WagonDTO wagonDTO)
+        public async Task<IActionResult> InsertWagon([FromBody] TransportationDTO transportationDTO)
         {
 
             if (!ModelState.IsValid)
@@ -60,11 +60,11 @@ namespace RivitaBackend.Controllers
                 _logger.LogError($"Invalid CREATE attempt in {nameof(InsertWagon)}");
                 return BadRequest("Submited data is invalid");
             }
-            var wagon = _mapper.Map<Wagon>(wagonDTO);
+            var transportation = _mapper.Map<Transportation>(transportationDTO);
 
-            await _unitOfWork.Wagons.Insert(wagon);
+            await _unitOfWork.Transportations.Insert(transportation);
             await _unitOfWork.Save();
-            return CreatedAtRoute("GetWagon", new { id = wagon.Id }, wagon);
+            return CreatedAtRoute("GetTransportation", new { id = transportation.Id }, transportation);
 
         }
 
@@ -72,24 +72,24 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateWagon([FromBody] WagonDTO wagonDTO, Guid id)
+        public async Task<IActionResult> UpdateTransportation([FromBody] TransportationDTO transportationDTO, Guid id)
         {
 
             if (!ModelState.IsValid)
             {
-                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateWagon)}");
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
 
-            var wagon = await _unitOfWork.Wagons.Get(w => w.Id == id);
-            if (wagon == null)
+            var transportation = await _unitOfWork.Transportations.Get(w => w.Id == id);
+            if (transportation == null)
             {
-                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateWagon)}");
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
 
-            _mapper.Map(wagonDTO, wagon);
-            _unitOfWork.Wagons.Update(wagon);
+            _mapper.Map(transportationDTO, transportation);
+            _unitOfWork.Transportations.Update(transportation);
             await _unitOfWork.Save();
 
             return NoContent();
@@ -99,17 +99,17 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteWagon(Guid id)
+        public async Task<IActionResult> DeleteTransportation(Guid id)
         {
 
-            var wagon = _unitOfWork.Wagons.Get(w => w.Id == id);
-            if (wagon == null)
+            var transportation = _unitOfWork.Transportations.Get(w => w.Id == id);
+            if (transportation == null)
             {
-                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteWagon)}");
+                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
 
-            await _unitOfWork.Wagons.DeleteGuid(id);
+            await _unitOfWork.Transportations.DeleteGuid(id);
             await _unitOfWork.Save();
 
             return NoContent();

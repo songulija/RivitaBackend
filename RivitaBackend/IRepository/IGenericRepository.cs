@@ -24,6 +24,7 @@ namespace RivitaBackend.IRepository
         Task InsertRange(IEnumerable<T> entities);
         // delete and update are not asynchronous so we dont need to use Task
         Task Delete(int id);
+        Task DeleteGuid(Guid id);
         void DeleteRange(IEnumerable<T> entities);
         void Update(T entity);
     }

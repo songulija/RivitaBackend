@@ -32,6 +32,13 @@ namespace RivitaBackend.Repository
             _context.SaveChanges();
         }
 
+        public async Task DeleteGuid(Guid id)
+        {
+            var entite = await _db.FindAsync(id);
+            _db.Remove(entite);
+            _context.SaveChanges();
+        }
+
         public void DeleteRange(IEnumerable<T> entities)
         {
             _db.RemoveRange(entities);
