@@ -37,6 +37,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.11",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.11",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.11",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.11",
           "Serilog.AspNetCore": "4.1.0",
@@ -448,6 +449,17 @@
         },
         "compile": {
           "lib/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.7710.5690"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -3467,6 +3479,13 @@
       "sha512": "sha512-Et5eJGuxtMSqYmHv3FYzLh8pf66RxSsDtw2Uy1ihDOvGSy4YKUBLW2Um+WlecLfMMrrq/QcW/asRPkCcLveiuA==",
       "path": "microsoft.aspnetcore.mvc.newtonsoftjson/5.0.11",
       "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.5.0.11.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mN9IARvNpHMBD2/oGmp5Bxp1Dg45Hfcp+LWaAyTtL2HisWLMOIcf0Ox1qW9IvCvdbHM+2A9dWEInhiqBsNxsJA==",
+      "path": "microsoft.aspnetcore.mvc.versioning/5.0.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

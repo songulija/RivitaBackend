@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5oouCB/Ln4+ClpoNEZ4HSRjLgZqovzBDHeFfkiuzyTfShuZCNpaaZHrzKt96vLZfra7YMq3Nh7ibKYw0eSxrtg==",
+  "dgSpecHash": "4Txh8gYvDdARhFX7Y+NHLBmsoRofz6xV/GYu25Pm3b3EjdIVtf+EkZBe/DJrzIhlO6vEFUCZZyOh1yNUtSSmFg==",
   "success": true,
   "projectFilePath": "D:\\AspNetApps\\RivitaBackend\\RivitaBackend\\RivitaBackend.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.11\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.11.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.11\\microsoft.aspnetcore.jsonpatch.5.0.11.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.11.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

@@ -188,3 +188,4 @@ D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.
 D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -89,6 +90,27 @@ namespace RivitaBackend
                     }
                 });
             
+            });
+        }
+
+        /// <summary>
+        /// This is for Versioning configuration. I will add this to Startup.cs
+        /// adding api versioning. setting options. when clients talk to api they will know what version they use
+        /// default api version is 1 For example, you might allow clients to choose between passing 
+        /// in a query string or a request header. The ApiVersionReader supports a static Combine method 
+        /// that allows you to specify multiple ways to read versions. With this in place, clients get v2.0 of
+        /// our API by calling /api/bands/4?version=2 or specifying a X-Api-Version header value of 2.
+        /// </summary>
+        /// <param name="services"></param>
+        public static void ConfigureVersioning(this IServiceCollection services)
+        {
+            services.AddApiVersioning(op =>
+            {
+                op.ReportApiVersions = true;
+                op.AssumeDefaultVersionWhenUnspecified = true;
+                op.ApiVersionReader = ApiVersionReader.Combine(
+                   new HeaderApiVersionReader("api-version"),
+                   new QueryStringApiVersionReader("version"));
             });
         }
     }
