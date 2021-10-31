@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,6 +30,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTransportations()
@@ -40,6 +42,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpGet("{id:Guid}",Name = "GetTransportation")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTransportation(Guid id)
@@ -52,6 +55,7 @@ namespace RivitaBackend.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -72,18 +76,21 @@ namespace RivitaBackend.Controllers
 
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:Guid}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateTransportation([FromBody] TransportationDTO transportationDTO, Guid id)
         {
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             if (!ModelState.IsValid)
             {
                 _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
 
+            transportationDTO.UserId = Guid.Parse(userId);
             var transportation = await _unitOfWork.Transportations.Get(w => w.Id == id);
             if (transportation == null)
             {
@@ -99,6 +106,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

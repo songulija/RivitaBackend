@@ -32,8 +32,8 @@ namespace RivitaBackend.Controllers
             _authManager = authManager;
         }
 
-        [Authorize]
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -51,6 +51,7 @@ namespace RivitaBackend.Controllers
         /// <param name="userDTO"></param>
         /// <returns></returns>
         [HttpPost("register")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
