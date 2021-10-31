@@ -74,7 +74,7 @@ namespace RivitaBackend.Controllers
 
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:Guid}")]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -102,7 +102,7 @@ namespace RivitaBackend.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:Guid}")]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
