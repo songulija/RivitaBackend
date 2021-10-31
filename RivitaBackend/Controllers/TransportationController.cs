@@ -52,12 +52,12 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> InsertWagon([FromBody] TransportationDTO transportationDTO)
+        public async Task<IActionResult> InsertTransportation([FromBody] TransportationDTO transportationDTO)
         {
 
             if (!ModelState.IsValid)
             {
-                _logger.LogError($"Invalid CREATE attempt in {nameof(InsertWagon)}");
+                _logger.LogError($"Invalid CREATE attempt in {nameof(InsertTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
             var transportation = _mapper.Map<Transportation>(transportationDTO);
