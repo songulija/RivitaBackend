@@ -35,6 +35,11 @@ namespace RivitaBackend
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("lukasConnection")));
 
+            //adding AddMemoryCache to keep track who requested, what requested and ..
+            services.AddMemoryCache();
+
+            //adding AddResponseCahcing
+            services.ConfigureHttpCacheHeaders();
 
             services.AddAuthentication();
             //calling method from ServiceExtensions to configure Identity
@@ -64,7 +69,13 @@ namespace RivitaBackend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RivitaBackend", Version = "v1" });
             });
-            services.AddControllers().AddNewtonsoftJson(op =>
+            services.AddControllers(config =>
+            {
+                config.CacheProfiles.Add("120SecondsDuration", new CacheProfile
+                {
+                    Duration = 120
+                });
+            }).AddNewtonsoftJson(op =>
                 op.SerializerSettings.ReferenceLoopHandling =
                     Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -88,6 +99,10 @@ namespace RivitaBackend
 
             // letting app know that it should use CORS policy with name "AllowAll" that i created 
             app.UseCors("AllowAll");
+
+            //registering our middleware. to use ResponseCaching that i specified in ConfigureServices
+            app.UseResponseCaching();
+            app.UseHttpCacheHeaders();
 
             app.UseRouting();
             app.UseAuthentication();

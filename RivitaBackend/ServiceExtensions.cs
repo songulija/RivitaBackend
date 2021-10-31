@@ -1,4 +1,5 @@
 ﻿
+using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -112,6 +113,31 @@ namespace RivitaBackend
                    new HeaderApiVersionReader("api-version"),
                    new QueryStringApiVersionReader("version"));
             });
+        }
+
+
+        /// <summary>
+        /// adding ConfigureHttpCacheHeaders. i'll add this configuration to Startup.cs
+        /// adding response caching, and http cache headers
+        /// Its for global caching
+        /// </summary>
+        /// <param name="services"></param>
+        public static void ConfigureHttpCacheHeaders(this IServiceCollection services)
+        {
+            //setting expirationOptions to httpCacheHeaders
+            //setting validationOpt MustRevalidate to true. means when data changed we go through that process again
+            services.AddResponseCaching();
+            services.AddHttpCacheHeaders(
+                (expirationOpt) =>
+                {
+                    expirationOpt.MaxAge = 65;
+                    expirationOpt.CacheLocation = CacheLocation.Private;
+                },
+                (validationOpt) =>
+                {
+                    validationOpt.MustRevalidate = true;
+                }
+            );
         }
     }
 }
