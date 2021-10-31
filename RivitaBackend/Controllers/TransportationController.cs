@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 
 namespace RivitaBackend.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TransportationController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -36,7 +38,7 @@ namespace RivitaBackend.Controllers
 
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:Guid}",Name = "GetTransportation")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTransportation(Guid id)

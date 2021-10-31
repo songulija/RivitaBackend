@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 
 namespace RivitaBackend.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class WagonsController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
