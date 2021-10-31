@@ -11,7 +11,7 @@ namespace RivitaBackend.ModelsDTO
     /// </summary>
     public class CreateTransportationDTO
     {
-        [Required]
+        //[Required]
         public Guid UserId { get; set; }
         [Required]
         public int TransportationNumber { get; set; }

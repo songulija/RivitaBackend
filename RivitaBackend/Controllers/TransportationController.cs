@@ -8,6 +8,7 @@ using RivitaBackend.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RivitaBackend.Controllers
@@ -56,12 +57,13 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> InsertTransportation([FromBody] TransportationDTO transportationDTO)
         {
-
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             if (!ModelState.IsValid)
             {
                 _logger.LogError($"Invalid CREATE attempt in {nameof(InsertTransportation)}");
                 return BadRequest("Submited data is invalid");
             }
+            transportationDTO.UserId = Guid.Parse(userId);
             var transportation = _mapper.Map<Transportation>(transportationDTO);
 
             await _unitOfWork.Transportations.Insert(transportation);
@@ -76,7 +78,6 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateTransportation([FromBody] TransportationDTO transportationDTO, Guid id)
         {
-
             if (!ModelState.IsValid)
             {
                 _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateTransportation)}");

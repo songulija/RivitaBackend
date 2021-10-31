@@ -33,7 +33,7 @@ namespace RivitaBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DatabaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("abduConnection")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("lukasConnection")));
 
             //adding AddMemoryCache to keep track who requested, what requested and ..
             services.AddMemoryCache();
