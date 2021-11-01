@@ -48,15 +48,15 @@ namespace RivitaBackend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7fb38b91-8ae2-48c1-9a89-0518072b3e31",
-                            ConcurrencyStamp = "b4dc66e1-9b48-487a-a70c-492115d1522a",
+                            Id = "57748ae7-e3a7-4e30-b028-f6040b6a4b45",
+                            ConcurrencyStamp = "02ead989-1e1d-4542-b7d9-5cb3cbbbc0c0",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "fcc3ef31-d458-4141-94f3-487593a746b8",
-                            ConcurrencyStamp = "546b5261-33ab-4d5a-8e56-35ef6395cffd",
+                            Id = "08199608-d5ff-4be7-a84b-11c362f87b55",
+                            ConcurrencyStamp = "1b7c9ac8-0958-41a5-a605-9672ea44a0e5",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

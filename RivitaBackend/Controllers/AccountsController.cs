@@ -51,7 +51,6 @@ namespace RivitaBackend.Controllers
         /// <param name="userDTO"></param>
         /// <returns></returns>
         [HttpPost("register")]
-        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -111,7 +110,7 @@ namespace RivitaBackend.Controllers
             // return new object iwth an expression called Token. It'lll equal to
             // authManager method CrateToken which will return Token
 
-            return Accepted(new { Token = await _authManager.CreateToken(), Email = userDTO.Email });
+            return Accepted(new { Token = await _authManager.CreateToken() });
         }
 
     }
