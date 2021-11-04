@@ -29,20 +29,17 @@ namespace RivitaBackend.Repository
         {
           var entite = await _db.FindAsync(id);
             _db.Remove(entite);
-            _context.SaveChanges();
         }
 
         public async Task DeleteGuid(Guid id)
         {
             var entite = await _db.FindAsync(id);
             _db.Remove(entite);
-            _context.SaveChanges();
         }
 
         public void DeleteRange(IEnumerable<T> entities)
         {
             _db.RemoveRange(entities);
-            _context.SaveChanges();
         }
 
         public async Task<T> Get(Expression<Func<T, bool>> expression = null, List<string> includes = null)
@@ -90,13 +87,11 @@ namespace RivitaBackend.Repository
         public async Task Insert(T entity)
         {
            await  _db.AddAsync(entity);
-            _context.SaveChanges();
         }
 
         public async Task InsertRange(IEnumerable<T> entities)
         {
             await _db.AddRangeAsync(entities);
-            _context.SaveChanges();
         }
 
         public void Update(T entity)
