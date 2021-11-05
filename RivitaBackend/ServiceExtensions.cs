@@ -122,6 +122,7 @@ namespace RivitaBackend
         /// Its for global caching
         /// </summary>
         /// <param name="services"></param>
+        /*
         public static void ConfigureHttpCacheHeaders(this IServiceCollection services)
         {
             //setting expirationOptions to httpCacheHeaders
@@ -138,6 +139,8 @@ namespace RivitaBackend
                     validationOpt.MustRevalidate = true;
                 }
             );
+        
         }
+        */
     }
 }

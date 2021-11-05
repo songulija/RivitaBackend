@@ -36,10 +36,10 @@ namespace RivitaBackend
                 options => options.UseSqlServer(Configuration.GetConnectionString("lukasConnection")));
 
             //adding AddMemoryCache to keep track who requested, what requested and ..
-            services.AddMemoryCache();
+            //services.AddMemoryCache();
 
             //adding AddResponseCahcing
-            services.ConfigureHttpCacheHeaders();
+            //services.ConfigureHttpCacheHeaders();
 
             services.AddAuthentication();
             //calling method from ServiceExtensions to configure Identity
@@ -101,8 +101,8 @@ namespace RivitaBackend
             app.UseCors("AllowAll");
 
             //registering our middleware. to use ResponseCaching that i specified in ConfigureServices
-            app.UseResponseCaching();
-            app.UseHttpCacheHeaders();
+            //app.UseResponseCaching();
+            //app.UseHttpCacheHeaders();
 
             app.UseRouting();
             app.UseAuthentication();

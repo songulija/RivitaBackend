@@ -16,13 +16,13 @@ namespace RivitaBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TransportationController : Controller
+    public class TransportationsController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly ILogger<TransportationController> _logger;
+        private readonly ILogger<TransportationsController> _logger;
 
-        public TransportationController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<TransportationController> logger)
+        public TransportationsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<TransportationsController> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -59,7 +59,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> InsertTransportation([FromBody] TransportationDTO transportationDTO)
+        public async Task<IActionResult> InsertTransportation([FromBody] CreateTransportationDTO transportationDTO)
         {
             string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             if (!ModelState.IsValid)
