@@ -64,7 +64,7 @@ namespace RivitaBackend.ModelsDTO
         public string StationMovementBeginingBelarusTitle { get; set; }
         // Not required if its still in belarus. When movemement in Belarus ends
         // admin will update it
-        public string StationMovementEndBelarusCode { get; set; }
+        public int StationMovementEndBelarusCode { get; set; }
         public string StationMovementEndBelarusTitle { get; set; }
     }
 

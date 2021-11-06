@@ -48,15 +48,15 @@ namespace RivitaBackend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "57748ae7-e3a7-4e30-b028-f6040b6a4b45",
-                            ConcurrencyStamp = "02ead989-1e1d-4542-b7d9-5cb3cbbbc0c0",
+                            Id = "67a8a37d-3a43-4871-b4b9-33bd8ff2a3c7",
+                            ConcurrencyStamp = "ce7fc7c2-e4bd-4145-9ac9-c415750fe91b",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "08199608-d5ff-4be7-a84b-11c362f87b55",
-                            ConcurrencyStamp = "1b7c9ac8-0958-41a5-a605-9672ea44a0e5",
+                            Id = "d878d54b-d776-4c50-995f-0332c148db1a",
+                            ConcurrencyStamp = "4254318d-3d59-4042-a76f-9ad52e0eaf04",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -318,8 +318,8 @@ namespace RivitaBackend.Migrations
                     b.Property<string>("StationMovementBeginingBelarusTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StationMovementEndBelarusCode")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("StationMovementEndBelarusCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("StationMovementEndBelarusTitle")
                         .HasColumnType("nvarchar(max)");

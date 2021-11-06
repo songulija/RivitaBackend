@@ -100,5 +100,10 @@ namespace RivitaBackend.Repository
 
             _context.Entry(entity).State = EntityState.Modified;
         }
+
+        public void UpdateRange(IEnumerable<T> entities)
+        {
+            _db.UpdateRange(entities);
+        }
     }
 }

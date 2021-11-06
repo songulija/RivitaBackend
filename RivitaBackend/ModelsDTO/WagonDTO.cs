@@ -12,7 +12,7 @@ namespace RivitaBackend.ModelsDTO
     public class CreateWagonDTO
     {
         [Required]
-        public int TransportationId { get; set; }
+        public Guid TransportationId { get; set; }
         [Required]
         public int NumberOfWagon { get; set; }
         [Required]

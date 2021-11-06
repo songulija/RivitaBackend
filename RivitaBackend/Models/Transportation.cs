@@ -43,7 +43,7 @@ namespace RivitaBackend.Models
         public string DestinationCountryTitle { get; set; }
         public int StationMovementBeginingBelarusCode { get; set; }
         public string StationMovementBeginingBelarusTitle { get; set; }
-        public string StationMovementEndBelarusCode { get; set; }
+        public int StationMovementEndBelarusCode { get; set; }
         public string StationMovementEndBelarusTitle { get; set; }
         // Information about Wagons. Each Transportation will have number of wagons. So its
         // one to many relationship.
