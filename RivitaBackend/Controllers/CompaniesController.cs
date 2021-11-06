@@ -114,6 +114,20 @@ namespace RivitaBackend.Controllers
 
             return NoContent();
         }
+        
+        [HttpPut("update")]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UpdateMany([FromBody] IEnumerable<UpdateCompanyDTO> companiesDTOs)
+        {
+            var companies = _mapper.Map<IList<Company>>(companiesDTOs);
+            _unitOfWork.Companies.UpdateRange(companies);
+            await _unitOfWork.Save();
+
+            return NoContent();
+        }
 
         [HttpDelete("{id}")]
         [Authorize(Roles = "Administrator")]

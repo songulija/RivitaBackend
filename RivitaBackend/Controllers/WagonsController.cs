@@ -52,6 +52,17 @@ namespace RivitaBackend.Controllers
             return Ok(result);
         }
 
+        [HttpGet("transportation/{id:Guid}")]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetWagonsByTransportation(Guid id)
+        {
+            var wagons = await _unitOfWork.Wagons.GetAll(w => w.TransportationId == id);
+            var results = _mapper.Map<IList<Wagon>>(wagons);
+            return Ok(results);
+        }
+
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
@@ -71,6 +82,22 @@ namespace RivitaBackend.Controllers
             await _unitOfWork.Wagons.Insert(wagon);
             await _unitOfWork.Save();
             return CreatedAtRoute("GetWagon", new { id = wagon.Id }, wagon);
+
+        }
+
+        [HttpPost("insert")]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> InsertMany([FromBody] IEnumerable<UpdateWagonDTO> wagonsDTOs)
+        {
+
+            var wagons = _mapper.Map<IList<Wagon>>(wagonsDTOs);
+
+            await _unitOfWork.Wagons.InsertRange(wagons);
+            await _unitOfWork.Save();
+            return NoContent();
 
         }
 
@@ -97,6 +124,19 @@ namespace RivitaBackend.Controllers
 
             _mapper.Map(wagonDTO, wagon);
             _unitOfWork.Wagons.Update(wagon);
+            await _unitOfWork.Save();
+
+            return NoContent();
+        }
+        [HttpPut("update")]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UpdateMany([FromBody]IEnumerable<UpdateWagonDTO> wagonsDTOs)
+        {
+            var wagons = _mapper.Map<IList<Wagon>>(wagonsDTOs);
+            _unitOfWork.Wagons.UpdateRange(wagons);
             await _unitOfWork.Save();
 
             return NoContent();
