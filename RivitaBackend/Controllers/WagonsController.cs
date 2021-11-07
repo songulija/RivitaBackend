@@ -40,7 +40,7 @@ namespace RivitaBackend.Controllers
 
         }
 
-        [HttpGet("{id:Guid}")]
+        [HttpGet("{id:Guid}", Name = "GetWagon")]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -82,22 +82,6 @@ namespace RivitaBackend.Controllers
             await _unitOfWork.Wagons.Insert(wagon);
             await _unitOfWork.Save();
             return CreatedAtRoute("GetWagon", new { id = wagon.Id }, wagon);
-
-        }
-
-        [HttpPost("insert")]
-        [Authorize(Roles = "Administrator")]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> InsertMany([FromBody] IEnumerable<UpdateWagonDTO> wagonsDTOs)
-        {
-
-            var wagons = _mapper.Map<IList<Wagon>>(wagonsDTOs);
-
-            await _unitOfWork.Wagons.InsertRange(wagons);
-            await _unitOfWork.Save();
-            return NoContent();
 
         }
 
