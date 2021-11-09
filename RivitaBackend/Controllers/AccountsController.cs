@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RivitaBackend.Models;
 using RivitaBackend.ModelsDTO;
@@ -31,17 +32,21 @@ namespace RivitaBackend.Controllers
             _logger = logger;
             _authManager = authManager;
         }
-
+        /// <summary>
+        /// get all users convert to dtos and return
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetUserId()
+        public async Task<IActionResult> GetUsers()
         {
-            Console.WriteLine("ITS HERERERER");
-            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
-            return Ok(userId);
+            var users = await _userManager.Users.ToListAsync();
+            var results = _mapper.Map<IList<UserDTO>>(users);
+
+            return Ok(results);
         }
 
         /// <summary>
@@ -51,6 +56,7 @@ namespace RivitaBackend.Controllers
         /// <param name="userDTO"></param>
         /// <returns></returns>
         [HttpPost("register")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
