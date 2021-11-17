@@ -81,7 +81,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateTransportation([FromBody] TransportationDTO transportationDTO, Guid id)
+        public async Task<IActionResult> UpdateTransportation([FromBody] UpdateTransportationDTO transportationDTO, Guid id)
         {
             string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             if (!ModelState.IsValid)

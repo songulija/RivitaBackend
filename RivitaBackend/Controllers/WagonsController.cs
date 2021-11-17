@@ -90,7 +90,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateWagon([FromBody] WagonDTO wagonDTO, Guid id)
+        public async Task<IActionResult> UpdateWagon([FromBody] UpdateWagonDTO wagonDTO, Guid id)
         {
 
             if (!ModelState.IsValid)

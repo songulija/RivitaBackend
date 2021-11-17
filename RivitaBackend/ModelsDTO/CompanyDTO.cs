@@ -9,7 +9,6 @@ namespace RivitaBackend.ModelsDTO
     public class CreateCompanyDTO
     {
         [Required]
-        [StringLength(maximumLength:70, MinimumLength = 2)]
         public string Name { get; set; }
     }
     public class UpdateCompanyDTO : CreateCompanyDTO
