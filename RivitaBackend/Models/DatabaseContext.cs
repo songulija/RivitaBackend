@@ -23,6 +23,7 @@ namespace RivitaBackend.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Transportation>(entity => { entity.HasIndex(e => e.TransportationNumber).IsUnique(); });
 
             // applying configurations. Seed data for IdentityRoles, Comapnies
             builder.ApplyConfiguration(new CompaniesConfiguration());

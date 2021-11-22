@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RivitaBackend.IRepository;
 using RivitaBackend.Models;
@@ -21,12 +22,14 @@ namespace RivitaBackend.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly ILogger<TransportationsController> _logger;
+        private DatabaseContext _context;
 
-        public TransportationsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<TransportationsController> logger)
+        public TransportationsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<TransportationsController> logger, DatabaseContext context)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
