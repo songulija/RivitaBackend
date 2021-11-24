@@ -20,12 +20,14 @@ namespace RivitaBackend.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly ILogger<WagonsController> _logger;
+        private readonly DatabaseContext _context;
 
-        public WagonsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<WagonsController> logger)
+        public WagonsController(IUnitOfWork unitOfWork, IMapper mapper, ILogger<WagonsController> logger,DatabaseContext context)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
@@ -62,7 +64,6 @@ namespace RivitaBackend.Controllers
             var results = _mapper.Map<IList<Wagon>>(wagons);
             return Ok(results);
         }
-
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]

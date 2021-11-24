@@ -56,6 +56,30 @@ namespace RivitaBackend.Controllers
             return Ok(result);
         }
 
+        [HttpGet("search")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0)
+        {
+            var query = _context.Transportations.AsNoTracking();
+            if(transportationNumber != 0)
+            {
+                query = query.Where(x => x.TransportationNumber == transportationNumber);
+            }
+            if (etsngCargoCode != 0)
+            {
+                query = query.Where(x => x.EtsngCargoCode == etsngCargoCode);
+            }
+            if (gngCargoCode != 0)
+            {
+                query = query.Where(x => x.GngCargoCode == gngCargoCode);
+            }
+            var transportations = await query.ToListAsync();
+            var results = _mapper.Map<IList<Transportation>>(transportations);
+            return Ok(results);
+        }
+
+
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
