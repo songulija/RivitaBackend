@@ -42,39 +42,38 @@ namespace RivitaBackend.Repository
             _db.RemoveRange(entities);
         }
 
-        public async Task<T> Get(Expression<Func<T, bool>> expression = null, List<string> includes = null)
+        public async Task<T> Get(Expression<Func<T, bool>> expression = null, string includeProperties = "")
         {
             // get all records from table 
-            IQueryable<T> query = _db; 
+            IQueryable<T> query = _db;
 
             //check if thay have any include
 
-            if(includes != null)
+            // looping through all includes and attaching each include to query
+            //it applies the eager-loading expressions after parsing the comma-delimited list:
+            foreach (var includeProperty in includeProperties.Split(
+                new char[] { ','}, StringSplitOptions.RemoveEmptyEntries))
             {
-                // looping through all includes and attaching each include to query
-                foreach (var includePropery in includes)
-                {
-                    query = query.Include(includePropery);
-                }
+                query = query.Include(includeProperty);
             }
 
             return await query.AsNoTracking().FirstOrDefaultAsync(expression);
 
         }
 
-        public async Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, List<string> includes = null)
+        public async Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
         {
             IQueryable<T> query = _db;
             if (expression != null)
             {
                 query = query.Where(expression);
             }
-            if(includes != null)
+            // looping through all includes and attaching each include to query
+            //it applies the eager-loading expressions after parsing the comma-delimited list:
+            foreach (var includeProperty in includeProperties.Split(
+                new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                foreach (var proertyInclude in includes)
-                {
-                    query = query.Include(proertyInclude);
-                }
+                query = query.Include(includeProperty);
             }
 
             if (orderBy != null)

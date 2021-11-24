@@ -16,9 +16,9 @@ namespace RivitaBackend.IRepository
         //return IList<T> class objects.Expression represents lambda expression
         Task<IList<T>> GetAll(Expression<Func<T,bool>> expression=null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy =null,
-            List<string> includes = null);
+            string includeProperties = "");
         Task<T> Get(Expression<Func<T, bool>> expression = null,
-            List<string> includes = null);
+            string includeProperties = "");
         Task Insert(T entity);
         // IEnumerable<T> is basically list of entities
         Task InsertRange(IEnumerable<T> entities);
