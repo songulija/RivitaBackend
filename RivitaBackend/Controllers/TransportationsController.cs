@@ -59,7 +59,9 @@ namespace RivitaBackend.Controllers
         [HttpGet("search")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0)
+        public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0,
+            [FromQuery]int departureStationCode=0,[FromQuery]int destinationStationCode = 0,
+            [FromQuery]int stationMovementBeginingBelarusCode = 0, [FromQuery]int stationMovementEndBelarusCode = 0)
         {
             var query = _context.Transportations.AsNoTracking();
             if(transportationNumber != 0)
@@ -73,6 +75,22 @@ namespace RivitaBackend.Controllers
             if (gngCargoCode != 0)
             {
                 query = query.Where(x => x.GngCargoCode == gngCargoCode);
+            }
+            if(departureStationCode != 0)
+            {
+                query = query.Where(x => x.DepartureStationCode == departureStationCode);
+            }
+            if(destinationStationCode != 0)
+            {
+                query = query.Where(x => x.DestinationStationCode == destinationStationCode);
+            }
+            if(stationMovementBeginingBelarusCode != 0)
+            {
+                query = query.Where(x => x.StationMovementBeginingBelarusCode == stationMovementBeginingBelarusCode);
+            }
+            if(stationMovementEndBelarusCode != 0)
+            {
+                query = query.Where(x => x.StationMovementEndBelarusCode == stationMovementEndBelarusCode);
             }
             var transportations = await query.ToListAsync();
             var results = _mapper.Map<IList<Transportation>>(transportations);
