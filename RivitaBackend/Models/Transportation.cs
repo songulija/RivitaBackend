@@ -13,7 +13,7 @@ namespace RivitaBackend.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(ApiUser))]
         public Guid UserId { get; set; }
         public virtual ApiUser User { get; set; }
         public int TransportationNumber { get; set; }

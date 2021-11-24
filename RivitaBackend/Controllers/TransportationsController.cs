@@ -38,7 +38,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTransportations()
         {
-            var transportations = await _unitOfWork.Transportations.GetAll();
+            var transportations = await _unitOfWork.Transportations.GetAll(includeProperties: "User");
             var results = _mapper.Map<IList<TransportationDTO>>(transportations);
             return Ok(results);
 
@@ -50,12 +50,11 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTransportation(Guid id)
         {
-            var transportation = await _unitOfWork.Transportations.Get(w => w.Id == id);
+            var transportation = await _unitOfWork.Transportations.Get(w => w.Id == id, includeProperties: "User");
 
             var result = _mapper.Map<TransportationDTO>(transportation);
             return Ok(result);
         }
-
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]

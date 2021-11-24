@@ -79,7 +79,7 @@ namespace RivitaBackend.ModelsDTO
     public class TransportationDTO : CreateTransportationDTO
     {
         public Guid Id { get; set; }
-        public UserDTO ApiUser { get; set; }
+        public UserDTO User { get; set; }
         public virtual IList<WagonDTO> Wagons { get; set; }
 
     }

@@ -46,7 +46,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagon(Guid id)
         {
-            var wagon = await _unitOfWork.Wagons.Get(w => w.Id == id);
+            var wagon = await _unitOfWork.Wagons.Get(w => w.Id == id, includeProperties: "Transportation");
 
             var result = _mapper.Map<WagonDTO>(wagon);
             return Ok(result);
@@ -58,7 +58,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagonsByTransportation(Guid id)
         {
-            var wagons = await _unitOfWork.Wagons.GetAll(w => w.TransportationId == id);
+            var wagons = await _unitOfWork.Wagons.GetAll(w => w.TransportationId == id, includeProperties: "Transportation");
             var results = _mapper.Map<IList<Wagon>>(wagons);
             return Ok(results);
         }

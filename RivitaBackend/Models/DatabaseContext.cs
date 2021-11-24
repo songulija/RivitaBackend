@@ -72,8 +72,6 @@ namespace RivitaBackend.Models
                 UserId = ADMIN_ID
             });
 
-
-
             builder.Entity<Transportation>(entity => { entity.HasIndex(e => e.TransportationNumber).IsUnique(); });
 
             
