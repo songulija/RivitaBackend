@@ -11,8 +11,7 @@ namespace RivitaBackend.Models
     {
         [ForeignKey(nameof(Company))]
         public int CompanyId { get; set; }
-        [NotMapped]
-        public Company Company { get; set; }
-        public virtual IList<Transportation> Transportations { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual ICollection<Transportation> Transportations { get; set; }
     }
 }

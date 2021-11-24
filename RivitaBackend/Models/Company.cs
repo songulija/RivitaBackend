@@ -13,6 +13,6 @@ namespace RivitaBackend.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual IList<ApiUser> Users { get; set; }
+        public virtual ICollection<ApiUser> Users { get; set; }
     }
 }

@@ -15,8 +15,7 @@ namespace RivitaBackend.Models
         public Guid Id { get; set; }
         [ForeignKey(nameof(User))]
         public Guid UserId { get; set; }
-        [NotMapped]
-        public ApiUser User { get; set; }
+        public virtual ApiUser User { get; set; }
         public int TransportationNumber { get; set; }
         public int Weight { get; set; }
         public int WagonsCount { get; set; }
@@ -47,6 +46,6 @@ namespace RivitaBackend.Models
         public string StationMovementEndBelarusTitle { get; set; }
         // Information about Wagons. Each Transportation will have number of wagons. So its
         // one to many relationship.
-        public virtual IList<Wagon> Wagons { get; set; }
+        public virtual ICollection<Wagon> Wagons { get; set; }
     }
 }
