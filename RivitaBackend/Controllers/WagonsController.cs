@@ -36,7 +36,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagons()
         {
-            var wagons = await _unitOfWork.Wagons.GetAll();
+            var wagons = await _unitOfWork.Wagons.GetAll(includeProperties: "Transportation");
             var results = _mapper.Map<IList<WagonDTO>>(wagons);
             return Ok(results);
 
