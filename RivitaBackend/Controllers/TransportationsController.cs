@@ -61,8 +61,12 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0,
             [FromQuery]int departureStationCode=0,[FromQuery]int destinationStationCode = 0,
-            [FromQuery]int stationMovementBeginingBelarusCode = 0, [FromQuery]int stationMovementEndBelarusCode = 0)
+            [FromQuery]int stationMovementBeginingBelarusCode = 0, [FromQuery]int stationMovementEndBelarusCode = 0,
+            [FromQuery]string cargoAcceptanceDateInBelarus = null, [FromQuery]string movementStartDateInBelarusFrom = null,
+            [FromQuery]string movementStartDateInBelarusTo = null, [FromQuery]string movementEndDateInBelarusFrom = null,
+            [FromQuery]string movementEndDateInBelarusTo = null)
         {
+           
             var query = _context.Transportations.AsNoTracking();
             if(transportationNumber != 0)
             {
@@ -91,6 +95,24 @@ namespace RivitaBackend.Controllers
             if(stationMovementEndBelarusCode != 0)
             {
                 query = query.Where(x => x.StationMovementEndBelarusCode == stationMovementEndBelarusCode);
+            }
+            if(cargoAcceptanceDateInBelarus != null)
+            {
+                var cargoAcceptanceInBelarusDate = DateTime.Parse(cargoAcceptanceDateInBelarus);
+                query = query.Where(x => x.CargoAcceptanceDate == cargoAcceptanceInBelarusDate);
+                /*DateTime.ParseExact(a.callDate, "yyyyMMddhhmm"*/
+            }
+            if(movementStartDateInBelarusFrom != null && movementStartDateInBelarusTo != null)
+            {
+                var movementStartInBelarusFromDate = DateTime.Parse(movementStartDateInBelarusFrom);
+                var movementStartInBelarusToDate = DateTime.Parse(movementStartDateInBelarusTo);
+                query = query.Where(x => x.MovementStartDateInBelarus >= movementStartInBelarusFromDate).Where(x => x.MovementStartDateInBelarus <= movementStartInBelarusToDate);
+            }
+            if(movementEndDateInBelarusFrom != null && movementEndDateInBelarusTo != null)
+            {
+                var movementEndInBelarusFromDate = DateTime.Parse(movementEndDateInBelarusFrom);
+                var movementEndInBelarusToDate = DateTime.Parse(movementEndDateInBelarusTo);
+                query = query.Where(x => x.MovementEndDateInBelarus >= movementEndInBelarusFromDate).Where(x => x.MovementEndDateInBelarus <= movementEndInBelarusToDate);
             }
             var transportations = await query.ToListAsync();
             var results = _mapper.Map<IList<Transportation>>(transportations);
