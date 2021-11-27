@@ -52,12 +52,14 @@ namespace RivitaBackend.Services
         /// <returns></returns>
         private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, List<Claim> claims)
         {
+            /*var lifetime = Environment.GetEnvironmentVariable("lifetime");
+            var issuer = Environment.GetEnvironmentVariable("Issuer");*/
             var jwtSettings = _configuration.GetSection("Jwt");
 
             var expiration = DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings.GetSection("lifetime").Value));
 
             var token = new JwtSecurityToken(
-                issuer: jwtSettings.GetSection("Issuer").Value,
+                 issuer: jwtSettings.GetSection("Issuer").Value,
                 claims: claims,
                 expires: expiration,
                 signingCredentials: signingCredentials

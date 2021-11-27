@@ -55,8 +55,8 @@ namespace RivitaBackend.Migrations
                         },
                         new
                         {
-                            Id = "52991b3b-c4c4-480d-b6c0-f3e54dfb19b4",
-                            ConcurrencyStamp = "cfb2bbfb-92d0-4d54-bc9b-cabed798744a",
+                            Id = "c5485f28-6a30-401f-9552-0a1d507e0391",
+                            ConcurrencyStamp = "530f65b0-b87c-46c6-9a66-3ff2e134ca36",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -248,14 +248,14 @@ namespace RivitaBackend.Migrations
                             Id = "c9490c27-1b89-4e39-8f2e-99b48dcc709e",
                             AccessFailedCount = 0,
                             CompanyId = 1,
-                            ConcurrencyStamp = "a1833b3d-0603-41bd-ab9c-f00c0c6c6a9f",
+                            ConcurrencyStamp = "a7628d44-ed52-49de-94ad-8ff307596d84",
                             Email = "rivitaadmin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "RIVITAADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENIIKPTMVoFHqu12ALhqXzdZ/CvKEXCw45RzjToydwZ919jji7/WsjHWm5RpizZQxg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEActPmUyP2FFbEvq33S0hew8FXWHiWoGyzKyIA2Mas3/eESMNYZnVo0KwesRN6Ii/Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "202b03a2-a740-4ea2-83b9-d24ef1c5ae89",
+                            SecurityStamp = "360d22a7-a8c6-4e65-9991-cf0673f55d34",
                             TwoFactorEnabled = false,
                             UserName = "rivitaadmin@gmail.com"
                         });

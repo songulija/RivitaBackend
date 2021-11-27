@@ -22,7 +22,7 @@ namespace RivitaBackend
             //if something happened that day you can easily find it. other way is to have one big file with years of logs. its a mess
             //THEN i have restrictedToMinimumLevel. i want to log only minimum of information. So THEN we can create Logger
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.File(path: "c:\\rivitabackend\\logs\\log-.txt",
+                .WriteTo.File(path: "logs\\log-.txt",
                 outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception]",
                 rollingInterval: RollingInterval.Day,
                 restrictedToMinimumLevel: LogEventLevel.Information

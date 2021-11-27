@@ -102,17 +102,28 @@ namespace RivitaBackend.Controllers
                 query = query.Where(x => x.CargoAcceptanceDate == cargoAcceptanceInBelarusDate);
                 /*DateTime.ParseExact(a.callDate, "yyyyMMddhhmm"*/
             }
-            if(movementStartDateInBelarusFrom != null && movementStartDateInBelarusTo != null)
+            if(movementStartDateInBelarusFrom != null)
             {
                 var movementStartInBelarusFromDate = DateTime.Parse(movementStartDateInBelarusFrom);
+
+                query = query.Where(x => x.MovementStartDateInBelarus >= movementStartInBelarusFromDate);
+            }
+            if(movementStartDateInBelarusTo != null)
+            {
                 var movementStartInBelarusToDate = DateTime.Parse(movementStartDateInBelarusTo);
-                query = query.Where(x => x.MovementStartDateInBelarus >= movementStartInBelarusFromDate).Where(x => x.MovementStartDateInBelarus <= movementStartInBelarusToDate);
+                query = query.Where(x => x.MovementStartDateInBelarus <= movementStartInBelarusToDate);
+
             }
             if(movementEndDateInBelarusFrom != null && movementEndDateInBelarusTo != null)
             {
                 var movementEndInBelarusFromDate = DateTime.Parse(movementEndDateInBelarusFrom);
+
+                query = query.Where(x => x.MovementEndDateInBelarus >= movementEndInBelarusFromDate);
+            }
+            if(movementEndDateInBelarusTo != null)
+            {
                 var movementEndInBelarusToDate = DateTime.Parse(movementEndDateInBelarusTo);
-                query = query.Where(x => x.MovementEndDateInBelarus >= movementEndInBelarusFromDate).Where(x => x.MovementEndDateInBelarus <= movementEndInBelarusToDate);
+                query = query.Where(x => x.MovementEndDateInBelarus <= movementEndInBelarusToDate);
             }
             var transportations = await query.ToListAsync();
             var results = _mapper.Map<IList<Transportation>>(transportations);

@@ -36,7 +36,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagons()
         {
-            var wagons = await _unitOfWork.Wagons.GetAll(includeProperties: "Transportation");
+            var wagons = await _unitOfWork.Wagons.GetAll();
             var results = _mapper.Map<IList<WagonDTO>>(wagons);
             return Ok(results);
 
@@ -82,7 +82,9 @@ namespace RivitaBackend.Controllers
 
             await _unitOfWork.Wagons.Insert(wagon);
             await _unitOfWork.Save();
-            return CreatedAtRoute("GetWagon", new { id = wagon.Id }, wagon);
+            var createdWagon = await _unitOfWork.Wagons.Get(w => w.Id == wagon.Id, includeProperties: "Transportation");
+            var result = _mapper.Map<WagonDTO>(createdWagon);
+            return Ok(result);
 
         }
 

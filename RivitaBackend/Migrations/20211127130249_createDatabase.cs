@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RivitaBackend.Migrations
 {
-    public partial class createDB : Migration
+    public partial class createDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -246,7 +246,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "52991b3b-c4c4-480d-b6c0-f3e54dfb19b4", "cfb2bbfb-92d0-4d54-bc9b-cabed798744a", "User", "USER" });
+                values: new object[] { "c5485f28-6a30-401f-9552-0a1d507e0391", "530f65b0-b87c-46c6-9a66-3ff2e134ca36", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "Companies",
@@ -256,7 +256,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "CompanyId", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "a1833b3d-0603-41bd-ab9c-f00c0c6c6a9f", "rivitaadmin@gmail.com", true, false, null, null, "RIVITAADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAENIIKPTMVoFHqu12ALhqXzdZ/CvKEXCw45RzjToydwZ919jji7/WsjHWm5RpizZQxg==", null, false, "202b03a2-a740-4ea2-83b9-d24ef1c5ae89", false, "rivitaadmin@gmail.com" });
+                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "a7628d44-ed52-49de-94ad-8ff307596d84", "rivitaadmin@gmail.com", true, false, null, null, "RIVITAADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEActPmUyP2FFbEvq33S0hew8FXWHiWoGyzKyIA2Mas3/eESMNYZnVo0KwesRN6Ii/Q==", null, false, "360d22a7-a8c6-4e65-9991-cf0673f55d34", false, "rivitaadmin@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

@@ -42,6 +42,7 @@ namespace RivitaBackend
             var jwtSettings = Configuration.GetSection("Jwt");
             //getting key that i set with Command Line
             var key = Environment.GetEnvironmentVariable("KEY");
+            /*var issuer = Environment.GetEnvironmentVariable("Issuer");*/
 
             //basically adding authentication to app. and default scheme that i want  is JWT
             //when somebody tires to authenticate check for bearer token

@@ -1,0 +1,27 @@
+2021-11-27 14:56:45.297 +02:00 [INF] Application Is Starting
+{Exception]2021-11-27 14:56:46.925 +02:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+{Exception]2021-11-27 14:56:47.586 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+{Exception]2021-11-27 14:56:47.586 +02:00 [INF] Hosting environment: Development
+{Exception]2021-11-27 14:56:47.587 +02:00 [INF] Content root path: D:\AspNetApps\RivitaBackend\RivitaBackend
+{Exception]2021-11-27 14:56:47.641 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/index.html - -
+{Exception]2021-11-27 14:56:47.768 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/index.html - - - 200 - text/html;charset=utf-8 128.7585ms
+{Exception]2021-11-27 14:56:48.071 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - -
+{Exception]2021-11-27 14:56:48.221 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.8615ms
+{Exception]2021-11-27 14:57:04.503 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 64
+{Exception]2021-11-27 14:57:05.342 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-11-27 14:57:05.391 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Accounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginUser(RivitaBackend.ModelsDTO.UserDTO) on controller RivitaBackend.Controllers.AccountsController (RivitaBackend).
+{Exception]2021-11-27 14:57:07.094 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-11-27 14:57:08.765 +02:00 [INF] Executed DbCommand (675ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+{Exception]2021-11-27 14:57:09.014 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+{Exception]2021-11-27 14:57:09.240 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+{Exception]2021-11-27 14:57:09.330 +02:00 [INF] Executed action RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend) in 3933.7692ms
+{Exception]2021-11-27 14:57:09.331 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-11-27 14:57:09.339 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 64 - 202 483 application/json;+charset=utf-8 4836.2187ms
+{Exception]
