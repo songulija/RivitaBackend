@@ -20,13 +20,9 @@ namespace RivitaBackend.ModelsDTO
         [Required]
         public int WagonsCount { get; set; }
         [Required]
-        public string TransportationStatus { get; set; }
-        [Required]
         public string TransportationType { get; set; }
-        [Required]
-        public int TransportationSubCode { get; set; }
-        [Required]
         // All Dates of Transportation
+        [Required]
         public DateTime CargoAcceptanceDate { get; set; }
         [Required]
         public DateTime MovementStartDateInBelarus { get; set; }
@@ -36,35 +32,20 @@ namespace RivitaBackend.ModelsDTO
         [Required]
         public int EtsngCargoCode { get; set; }
         [Required]
-        public string EtsngCargoTitle { get; set; }
-        [Required]
         public int GngCargoCode { get; set; }
-        [Required]
-        public string GngCargoTitle { get; set; }
         // Information about Stations
-        [Required]
-        public int DepartureStationCode { get; set; }
         [Required]
         public string DepartureStationTitle { get; set; }
         [Required]
-        public int DepartureCountryCode { get; set; }
-        [Required]
         public string DepartureCountryTitle { get; set; }
-        [Required]
-        public int DestinationStationCode { get; set; }
         [Required]
         public string DestinationStationTitle { get; set; }
         [Required]
-        public int DestinationCountryCode { get; set; }
-        [Required]
         public string DestinationCountryTitle { get; set; }
-        [Required]
-        public int StationMovementBeginingBelarusCode { get; set; }
         [Required]
         public string StationMovementBeginingBelarusTitle { get; set; }
         // Not required if its still in belarus. When movemement in Belarus ends
         // admin will update it
-        public int StationMovementEndBelarusCode { get; set; }
         public string StationMovementEndBelarusTitle { get; set; }
     }
 

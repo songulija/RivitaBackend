@@ -18,8 +18,6 @@ namespace RivitaBackend.ModelsDTO
         [Required]
         public string TypeOfWagon { get; set; }
         [Required]
-        public int LiftingCapacityTons { get; set; }
-        [Required]
         public int Weight { get; set; }
     }
     public class UpdateWagonDTO : CreateWagonDTO
