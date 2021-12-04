@@ -18,7 +18,6 @@ namespace RivitaBackend.Models
         public virtual Transportation Transportation { get; set; }
         public int NumberOfWagon { get; set; }
         public string TypeOfWagon { get; set; }
-        public int LiftingCapacityTons { get; set; }
         public int Weight { get; set; }
     }
 }

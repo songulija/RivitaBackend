@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RivitaBackend.Migrations
 {
-    public partial class createDatabase : Migration
+    public partial class createdDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -182,27 +182,17 @@ namespace RivitaBackend.Migrations
                     TransportationNumber = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<int>(type: "int", nullable: false),
                     WagonsCount = table.Column<int>(type: "int", nullable: false),
-                    TransportationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TransportationType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TransportationSubCode = table.Column<int>(type: "int", nullable: false),
                     CargoAcceptanceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovementStartDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovementEndDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EtsngCargoCode = table.Column<int>(type: "int", nullable: false),
-                    EtsngCargoTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GngCargoCode = table.Column<int>(type: "int", nullable: false),
-                    GngCargoTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DepartureStationCode = table.Column<int>(type: "int", nullable: false),
                     DepartureStationTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DepartureCountryCode = table.Column<int>(type: "int", nullable: false),
                     DepartureCountryTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DestinationStationCode = table.Column<int>(type: "int", nullable: false),
                     DestinationStationTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DestinationCountryCode = table.Column<int>(type: "int", nullable: false),
                     DestinationCountryTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StationMovementBeginingBelarusCode = table.Column<int>(type: "int", nullable: false),
                     StationMovementBeginingBelarusTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StationMovementEndBelarusCode = table.Column<int>(type: "int", nullable: false),
                     StationMovementEndBelarusTitle = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -224,7 +214,6 @@ namespace RivitaBackend.Migrations
                     TransportationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     NumberOfWagon = table.Column<int>(type: "int", nullable: false),
                     TypeOfWagon = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LiftingCapacityTons = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -246,7 +235,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c5485f28-6a30-401f-9552-0a1d507e0391", "530f65b0-b87c-46c6-9a66-3ff2e134ca36", "User", "USER" });
+                values: new object[] { "f283f1cd-0075-4c54-a18f-3dd593362d64", "0f1cc957-fe5d-4618-b426-32d00ecd480b", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "Companies",
@@ -256,7 +245,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "CompanyId", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "a7628d44-ed52-49de-94ad-8ff307596d84", "rivitaadmin@gmail.com", true, false, null, null, "RIVITAADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEActPmUyP2FFbEvq33S0hew8FXWHiWoGyzKyIA2Mas3/eESMNYZnVo0KwesRN6Ii/Q==", null, false, "360d22a7-a8c6-4e65-9991-cf0673f55d34", false, "rivitaadmin@gmail.com" });
+                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "da142466-58ff-4f5e-9798-413bac9c1fa7", "rivitaadmin@gmail.com", true, false, null, null, "RIVITAADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEKGQQdGmWcq2urAVdHozI8tc8FU/QPbLBm6Unb0F+9yKm0cG1oHOiKNU3veBB1/goQ==", null, false, "e8c1c67f-4db1-4bd1-adc7-3409ff18b371", false, "rivitaadmin@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

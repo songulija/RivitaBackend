@@ -10,8 +10,8 @@ using RivitaBackend.Models;
 namespace RivitaBackend.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211127130249_createDatabase")]
-    partial class createDatabase
+    [Migration("20211204103832_createdDB")]
+    partial class createdDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,8 +57,8 @@ namespace RivitaBackend.Migrations
                         },
                         new
                         {
-                            Id = "c5485f28-6a30-401f-9552-0a1d507e0391",
-                            ConcurrencyStamp = "530f65b0-b87c-46c6-9a66-3ff2e134ca36",
+                            Id = "f283f1cd-0075-4c54-a18f-3dd593362d64",
+                            ConcurrencyStamp = "0f1cc957-fe5d-4618-b426-32d00ecd480b",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -250,14 +250,14 @@ namespace RivitaBackend.Migrations
                             Id = "c9490c27-1b89-4e39-8f2e-99b48dcc709e",
                             AccessFailedCount = 0,
                             CompanyId = 1,
-                            ConcurrencyStamp = "a7628d44-ed52-49de-94ad-8ff307596d84",
+                            ConcurrencyStamp = "da142466-58ff-4f5e-9798-413bac9c1fa7",
                             Email = "rivitaadmin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "RIVITAADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEActPmUyP2FFbEvq33S0hew8FXWHiWoGyzKyIA2Mas3/eESMNYZnVo0KwesRN6Ii/Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKGQQdGmWcq2urAVdHozI8tc8FU/QPbLBm6Unb0F+9yKm0cG1oHOiKNU3veBB1/goQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "360d22a7-a8c6-4e65-9991-cf0673f55d34",
+                            SecurityStamp = "e8c1c67f-4db1-4bd1-adc7-3409ff18b371",
                             TwoFactorEnabled = false,
                             UserName = "rivitaadmin@gmail.com"
                         });
@@ -294,26 +294,14 @@ namespace RivitaBackend.Migrations
                     b.Property<DateTime>("CargoAcceptanceDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DepartureCountryCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("DepartureCountryTitle")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DepartureStationCode")
-                        .HasColumnType("int");
 
                     b.Property<string>("DepartureStationTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DestinationCountryCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("DestinationCountryTitle")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DestinationStationCode")
-                        .HasColumnType("int");
 
                     b.Property<string>("DestinationStationTitle")
                         .HasColumnType("nvarchar(max)");
@@ -321,14 +309,8 @@ namespace RivitaBackend.Migrations
                     b.Property<int>("EtsngCargoCode")
                         .HasColumnType("int");
 
-                    b.Property<string>("EtsngCargoTitle")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("GngCargoCode")
                         .HasColumnType("int");
-
-                    b.Property<string>("GngCargoTitle")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("MovementEndDateInBelarus")
                         .HasColumnType("datetime2");
@@ -336,25 +318,13 @@ namespace RivitaBackend.Migrations
                     b.Property<DateTime>("MovementStartDateInBelarus")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StationMovementBeginingBelarusCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("StationMovementBeginingBelarusTitle")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StationMovementEndBelarusCode")
-                        .HasColumnType("int");
 
                     b.Property<string>("StationMovementEndBelarusTitle")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TransportationNumber")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TransportationStatus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TransportationSubCode")
                         .HasColumnType("int");
 
                     b.Property<string>("TransportationType")
@@ -387,9 +357,6 @@ namespace RivitaBackend.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("LiftingCapacityTons")
-                        .HasColumnType("int");
 
                     b.Property<int>("NumberOfWagon")
                         .HasColumnType("int");
