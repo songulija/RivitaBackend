@@ -235,7 +235,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "14b3b6b8-1ac1-4ee5-935c-26af99c9f058", "a2873425-a9b2-4e7f-9e0d-de9c0b1fe130", "User", "USER" });
+                values: new object[] { "02d33f78-4cd9-4daf-9c6a-9a2750ab10bb", "86b4be6d-ee6b-456a-82be-3ea8ac3c4fc0", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "Companies",
@@ -245,7 +245,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "CompanyId", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "9dcb93c0-4ce6-4b56-9020-579d056c4e8b", "jevgenijrivita", true, false, null, null, "EVGENIJADMIN", "AQAAAAEAACcQAAAAEBm3NtJh557dhtB/khmz022MAVK1AaIpFQXbB22dlQrltZtehyiodwpB3a2AGV8ijQ==", null, false, "3128507b-81d8-4d43-a25d-e00c1d7de5ca", false, "evgenijadmin" });
+                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "79111c51-d465-4939-b768-89d0bd78f0ce", "jevgenijrivita", true, false, null, null, "JEVGENIJRIVITA", "AQAAAAEAACcQAAAAECUUSkBTTP6AP19ExoxPjO5w6ZUyKwblysulS13qCYpPn8hYkHQe+inxGSvP7aDMbg==", "+37061816214", false, "da122aef-fbec-4124-9286-15fc215ecb90", false, "jevgenijrivita" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

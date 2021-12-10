@@ -54,13 +54,14 @@ namespace RivitaBackend.Models
                 Email = "jevgenijrivita",
                 EmailConfirmed = true,
                 UserName = "jevgenijrivita",
+                PhoneNumber = "+37061816214",
                 CompanyId = 1,
                 NormalizedUserName = "JEVGENIJRIVITA"
             };
 
             //set user password
             PasswordHasher<ApiUser> ph = new PasswordHasher<ApiUser>();
-            appUser.PasswordHash = ph.HashPassword(appUser, "kazahas@123");
+            appUser.PasswordHash = ph.HashPassword(appUser, "Kazahas@123");
 
             //seed user
             builder.Entity<ApiUser>().HasData(appUser);

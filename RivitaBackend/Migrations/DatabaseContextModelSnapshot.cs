@@ -55,8 +55,8 @@ namespace RivitaBackend.Migrations
                         },
                         new
                         {
-                            Id = "14b3b6b8-1ac1-4ee5-935c-26af99c9f058",
-                            ConcurrencyStamp = "a2873425-a9b2-4e7f-9e0d-de9c0b1fe130",
+                            Id = "02d33f78-4cd9-4daf-9c6a-9a2750ab10bb",
+                            ConcurrencyStamp = "86b4be6d-ee6b-456a-82be-3ea8ac3c4fc0",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -248,16 +248,17 @@ namespace RivitaBackend.Migrations
                             Id = "c9490c27-1b89-4e39-8f2e-99b48dcc709e",
                             AccessFailedCount = 0,
                             CompanyId = 1,
-                            ConcurrencyStamp = "9dcb93c0-4ce6-4b56-9020-579d056c4e8b",
+                            ConcurrencyStamp = "79111c51-d465-4939-b768-89d0bd78f0ce",
                             Email = "jevgenijrivita",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedUserName = "EVGENIJADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBm3NtJh557dhtB/khmz022MAVK1AaIpFQXbB22dlQrltZtehyiodwpB3a2AGV8ijQ==",
+                            NormalizedUserName = "JEVGENIJRIVITA",
+                            PasswordHash = "AQAAAAEAACcQAAAAECUUSkBTTP6AP19ExoxPjO5w6ZUyKwblysulS13qCYpPn8hYkHQe+inxGSvP7aDMbg==",
+                            PhoneNumber = "+37061816214",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3128507b-81d8-4d43-a25d-e00c1d7de5ca",
+                            SecurityStamp = "da122aef-fbec-4124-9286-15fc215ecb90",
                             TwoFactorEnabled = false,
-                            UserName = "evgenijadmin"
+                            UserName = "jevgenijrivita"
                         });
                 });
 
