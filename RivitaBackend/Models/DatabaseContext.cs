@@ -51,16 +51,16 @@ namespace RivitaBackend.Models
             var appUser = new ApiUser
             {
                 Id = ADMIN_ID,
-                Email = "rivitaadmin@gmail.com",
+                Email = "jevgenijrivita",
                 EmailConfirmed = true,
-                UserName = "rivitaadmin@gmail.com",
+                UserName = "jevgenijrivita",
                 CompanyId = 1,
-                NormalizedUserName = "RIVITAADMIN@GMAIL.COM"
+                NormalizedUserName = "JEVGENIJRIVITA"
             };
 
             //set user password
             PasswordHasher<ApiUser> ph = new PasswordHasher<ApiUser>();
-            appUser.PasswordHash = ph.HashPassword(appUser, "P@ssword1");
+            appUser.PasswordHash = ph.HashPassword(appUser, "kazahas@123");
 
             //seed user
             builder.Entity<ApiUser>().HasData(appUser);

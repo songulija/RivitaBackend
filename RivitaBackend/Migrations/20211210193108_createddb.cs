@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RivitaBackend.Migrations
 {
-    public partial class createdDB : Migration
+    public partial class createddb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -235,7 +235,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "f283f1cd-0075-4c54-a18f-3dd593362d64", "0f1cc957-fe5d-4618-b426-32d00ecd480b", "User", "USER" });
+                values: new object[] { "14b3b6b8-1ac1-4ee5-935c-26af99c9f058", "a2873425-a9b2-4e7f-9e0d-de9c0b1fe130", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "Companies",
@@ -245,7 +245,7 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "CompanyId", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "da142466-58ff-4f5e-9798-413bac9c1fa7", "rivitaadmin@gmail.com", true, false, null, null, "RIVITAADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEKGQQdGmWcq2urAVdHozI8tc8FU/QPbLBm6Unb0F+9yKm0cG1oHOiKNU3veBB1/goQ==", null, false, "e8c1c67f-4db1-4bd1-adc7-3409ff18b371", false, "rivitaadmin@gmail.com" });
+                values: new object[] { "c9490c27-1b89-4e39-8f2e-99b48dcc709e", 0, 1, "9dcb93c0-4ce6-4b56-9020-579d056c4e8b", "jevgenijrivita", true, false, null, null, "EVGENIJADMIN", "AQAAAAEAACcQAAAAEBm3NtJh557dhtB/khmz022MAVK1AaIpFQXbB22dlQrltZtehyiodwpB3a2AGV8ijQ==", null, false, "3128507b-81d8-4d43-a25d-e00c1d7de5ca", false, "evgenijadmin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
