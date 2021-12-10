@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YYtvFCDQX0/cuGSBFZyQrjMHnUR0QR+KJPIBb9Q+QBmJqXUSVsTWrFNpZvgUyLOznIf8akiXc4v7CvO0xSgv9g==",
+  "dgSpecHash": "yl7cgda7jkehk7htWReGlVQw9dZbA6C7Vcmr94qJL4RMK0wWJuBwxaeMuIaN/6wVWXXS6bLRPvZMsSu4sLTqvA==",
   "success": true,
   "projectFilePath": "D:\\AspNetApps\\RivitaBackend\\RivitaBackend\\RivitaBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\marvin.cache.headers\\5.0.1\\marvin.cache.headers.5.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.11\\microsoft.aspnetcore.authentication.jwtbearer.5.0.11.nupkg.sha512",

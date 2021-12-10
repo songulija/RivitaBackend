@@ -13,6 +13,8 @@ namespace RivitaBackend.IRepository
         IGenericRepository<Transportation> Transportations { get; }
         IGenericRepository<Wagon> Wagons { get; }
         IGenericRepository<Company> Companies { get; }
+        IGenericRepository<UserType> UserTypes { get; }
+        IGenericRepository<User> Users { get; }
         // one more operation which is Save. to save all modified record at once
         Task Save();
     }

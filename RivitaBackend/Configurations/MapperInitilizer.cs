@@ -13,7 +13,8 @@ namespace RivitaBackend.Configurations
     {
         public MapperInitilizer()
         {
-            CreateMap<ApiUser, UserDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<User, DisplayUserDTO>().ReverseMap();
 
             CreateMap<Company, CompanyDTO>().ReverseMap();
             CreateMap<Company, CreateCompanyDTO>().ReverseMap();

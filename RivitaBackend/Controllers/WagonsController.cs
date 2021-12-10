@@ -55,7 +55,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpGet("transportation/{id:Guid}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagonsByTransportation(Guid id)
@@ -66,7 +66,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -89,7 +89,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -116,7 +116,7 @@ namespace RivitaBackend.Controllers
             return NoContent();
         }
         [HttpPut("update")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -130,7 +130,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -196,3 +196,4 @@ D:\Lukai\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.JsonP
 D:\Lukai\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Lukai\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 D:\Lukai\RivitaBackend\RivitaBackend\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Debug\net5.0\BCrypt.Net-Next.dll

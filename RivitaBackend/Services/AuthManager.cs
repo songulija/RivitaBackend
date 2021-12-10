@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using RivitaBackend.IRepository;
 using RivitaBackend.Models;
 using RivitaBackend.ModelsDTO;
 using System;
@@ -15,13 +16,13 @@ namespace RivitaBackend.Services
 {
     public class AuthManager : IAuthManager
     {
-        private readonly UserManager<ApiUser> _userManager;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
-        private ApiUser _user;
+        private User _user;
 
-        public AuthManager(UserManager<ApiUser> userManager, IConfiguration configuration)
+        public AuthManager(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
-            _userManager = userManager;
+            _unitOfWork = unitOfWork;
             _configuration = configuration;
         }
 
@@ -78,14 +79,12 @@ namespace RivitaBackend.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, _user.UserName),
+                new Claim(ClaimTypes.Name, _user.Username),
                 new Claim(ClaimTypes.NameIdentifier, _user.Id.ToString())
             };
-            var roles = await _userManager.GetRolesAsync(_user);
-            foreach (var role in roles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role));
-            }
+            var role = await _unitOfWork.UserTypes.Get(u => u.Id == _user.TypeId);
+            var roleName = role.Title;
+            claims.Add(new Claim(ClaimTypes.Role, roleName));
 
             return claims;
         }
@@ -111,8 +110,15 @@ namespace RivitaBackend.Services
         /// <returns></returns>
         public async Task<bool> ValidateUser(LoginUserDTO userDTO)
         {
-            _user = await _userManager.FindByNameAsync(userDTO.Email);
-            return (_user != null && await _userManager.CheckPasswordAsync(_user, userDTO.Password));
+            _user = await _unitOfWork.Users.Get(u => u.Username == userDTO.Username);
+            if (_user != null && BCrypt.Net.BCrypt.Verify(userDTO.Password, _user.Password) == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

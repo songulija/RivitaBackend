@@ -83,3 +83,4 @@ D:\AspNetApps\RivitaBackend\RivitaBackend\obj\Release\net5.0\RivitaBackend.dll
 D:\AspNetApps\RivitaBackend\RivitaBackend\obj\Release\net5.0\ref\RivitaBackend.dll
 D:\AspNetApps\RivitaBackend\RivitaBackend\obj\Release\net5.0\RivitaBackend.pdb
 D:\AspNetApps\RivitaBackend\RivitaBackend\obj\Release\net5.0\RivitaBackend.genruntimeconfig.cache
+D:\AspNetApps\RivitaBackend\RivitaBackend\bin\Release\net5.0\BCrypt.Net-Next.dll

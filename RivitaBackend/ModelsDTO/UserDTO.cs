@@ -10,9 +10,8 @@ namespace RivitaBackend.ModelsDTO
     public class LoginUserDTO
     {
         [Required]
-        public string Email { get; set; }
+        public string Username { get; set; }
         [Required]
-        [StringLength(15, ErrorMessage = "Password is limited to {2} to {1} characters",MinimumLength = 6)]
         public string Password { get; set; }
     }
     /// <summary>
@@ -21,11 +20,31 @@ namespace RivitaBackend.ModelsDTO
     /// </summary>
     public class UserDTO : LoginUserDTO
     {
+        [Required]
+        public Guid Id { get; set; }
         public string PhoneNumber { get; set; }
+        [Required]
+        public int TypeId { get; set; }
+        public UserType UserType { get; set; }
+        [Required]
         public int CompanyId { get; set; }
         public Company Company { get; set; }
-        public ICollection<string> Roles { get; set; }
         public virtual IList<TransportationDTO> Transportations { get; set; }
+    }
 
+    public class DisplayUserDTO
+    {
+        [Required]
+        public Guid Id { get; set; }
+        [Required]
+        public string Username { get; set; }
+        public string PhoneNumber { get; set; }
+        [Required]
+        public int TypeId { get; set; }
+        public UserType UserType { get; set; }
+        [Required]
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
+        public virtual IList<TransportationDTO> Transportations { get; set; }
     }
 }
