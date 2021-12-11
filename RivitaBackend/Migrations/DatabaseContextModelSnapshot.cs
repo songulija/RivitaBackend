@@ -156,7 +156,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"),
                             CompanyId = 1,
-                            Password = "$2a$11$7JqtbcZ6hOGSGXYQImLG9eMxvjJ8yMw9zyJF5.EBR0UtxbfB.gPlO",
+                            Password = "$2a$11$hyFicRvD5rJBuEdDdBjOkOOVJsmDKun2uIJL7EvleBxBT8Eb1Ip6i",
                             PhoneNumber = "+37061816214",
                             TypeId = 1,
                             Username = "jevgenijrivita"
@@ -165,18 +165,18 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"),
                             CompanyId = 2,
-                            Password = "$2a$11$NUCb2tASUeE5CZJZa1dBfOFxLj.yQKlZqrxlprDeX.XSYSSdOdYH6",
+                            Password = "$2a$11$Ll8WYKr4unNcGfmh0c/5/eK9NdgU16YSul/Jv3UN3sTZU8V6I.LAa",
                             PhoneNumber = "+37060855183",
-                            TypeId = 1,
+                            TypeId = 2,
                             Username = "lukasrivita"
                         },
                         new
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"),
                             CompanyId = 3,
-                            Password = "$2a$11$RFDwf4FG./ViEGgs9jpVr.2GnnHN2Mf8BAp4ZGPDBun.ou6osdIQ2",
+                            Password = "$2a$11$f5a2qvVKoCU7EDu/8E5KTegtMaXSAdfx3a1H1jN.Bba0g1VhkBvqu",
                             PhoneNumber = "+37060855181",
-                            TypeId = 1,
+                            TypeId = 2,
                             Username = "abdorivita"
                         });
                 });
