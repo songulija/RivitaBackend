@@ -63,7 +63,7 @@ namespace RivitaBackend.Controllers
         public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0,
             [FromQuery]string cargoAcceptanceDateInBelarus = null, [FromQuery]string movementStartDateInBelarusFrom = null,
             [FromQuery]string movementStartDateInBelarusTo = null, [FromQuery]string movementEndDateInBelarusFrom = null,
-            [FromQuery]string movementEndDateInBelarusTo = null)
+            [FromQuery]string movementEndDateInBelarusTo = null, [FromQuery]string companyName = null)
         {
            
             var query = _context.Transportations.AsNoTracking();
@@ -107,6 +107,10 @@ namespace RivitaBackend.Controllers
             {
                 var movementEndInBelarusToDate = DateTime.Parse(movementEndDateInBelarusTo);
                 query = query.Where(x => x.MovementEndDateInBelarus <= movementEndInBelarusToDate);
+            }
+            if(companyName != null)
+            {
+                query = query.Where(x => x.CompanyName == companyName);
             }
             var transportations = await query.ToListAsync();
             var results = _mapper.Map<IList<Transportation>>(transportations);
