@@ -10,7 +10,7 @@ using RivitaBackend.Models;
 namespace RivitaBackend.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211211115008_createdDB")]
+    [Migration("20211211192905_createdDB")]
     partial class createdDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,7 +158,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"),
                             CompanyId = 1,
-                            Password = "$2a$11$hyFicRvD5rJBuEdDdBjOkOOVJsmDKun2uIJL7EvleBxBT8Eb1Ip6i",
+                            Password = "$2a$11$nftTyo5XZMTxs7DKK/GP4esn.puNlqmGxJXbOzYPwYP3ftLqDYBy.",
                             PhoneNumber = "+37061816214",
                             TypeId = 1,
                             Username = "jevgenijrivita"
@@ -166,20 +166,20 @@ namespace RivitaBackend.Migrations
                         new
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"),
-                            CompanyId = 2,
-                            Password = "$2a$11$Ll8WYKr4unNcGfmh0c/5/eK9NdgU16YSul/Jv3UN3sTZU8V6I.LAa",
+                            CompanyId = 1,
+                            Password = "$2a$11$/dkNI3jt0qMTcaeyD84Y4OHXjrnpWuXrucXYVE2n4lTPuLPN31Uce",
                             PhoneNumber = "+37060855183",
-                            TypeId = 2,
+                            TypeId = 1,
                             Username = "lukasrivita"
                         },
                         new
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"),
                             CompanyId = 3,
-                            Password = "$2a$11$f5a2qvVKoCU7EDu/8E5KTegtMaXSAdfx3a1H1jN.Bba0g1VhkBvqu",
-                            PhoneNumber = "+37060855181",
+                            Password = "$2a$11$D1C2Kv6xB9JChbRGPOEW.OBVthDva2D0ru31.CtGGBXTosR7RdWm6",
+                            PhoneNumber = "+37060855183",
                             TypeId = 2,
-                            Username = "abdorivita"
+                            Username = "jonasmestilla"
                         });
                 });
 

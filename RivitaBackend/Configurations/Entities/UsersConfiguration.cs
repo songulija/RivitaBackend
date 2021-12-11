@@ -31,18 +31,19 @@ namespace RivitaBackend.Configurations.Entities
                     Username = "lukasrivita",
                     PhoneNumber = "+37060855183",
                     Password = BCrypt.Net.BCrypt.HashPassword("Password@12"),
-                    CompanyId = 2,
-                    TypeId = 2
+                    CompanyId = 1,
+                    TypeId = 1
                 },
                 new User
                 {
                     Id = id3,
-                    Username = "abdorivita",
-                    PhoneNumber = "+37060855181",
+                    Username = "jonasmestilla",
+                    PhoneNumber = "+37060855183",
                     Password = BCrypt.Net.BCrypt.HashPassword("Password@12"),
                     CompanyId = 3,
                     TypeId = 2
                 }
+
             );
         }
     }

@@ -138,17 +138,17 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$hyFicRvD5rJBuEdDdBjOkOOVJsmDKun2uIJL7EvleBxBT8Eb1Ip6i", "+37061816214", 1, "jevgenijrivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$nftTyo5XZMTxs7DKK/GP4esn.puNlqmGxJXbOzYPwYP3ftLqDYBy.", "+37061816214", 1, "jevgenijrivita" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"), 2, "$2a$11$Ll8WYKr4unNcGfmh0c/5/eK9NdgU16YSul/Jv3UN3sTZU8V6I.LAa", "+37060855183", 2, "lukasrivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"), 1, "$2a$11$/dkNI3jt0qMTcaeyD84Y4OHXjrnpWuXrucXYVE2n4lTPuLPN31Uce", "+37060855183", 1, "lukasrivita" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"), 3, "$2a$11$f5a2qvVKoCU7EDu/8E5KTegtMaXSAdfx3a1H1jN.Bba0g1VhkBvqu", "+37060855181", 2, "abdorivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"), 3, "$2a$11$D1C2Kv6xB9JChbRGPOEW.OBVthDva2D0ru31.CtGGBXTosR7RdWm6", "+37060855183", 2, "jonasmestilla" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transportations_TransportationNumber",

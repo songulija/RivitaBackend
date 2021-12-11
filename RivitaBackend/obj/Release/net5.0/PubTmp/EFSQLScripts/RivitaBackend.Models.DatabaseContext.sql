@@ -11,7 +11,7 @@ GO
 BEGIN TRANSACTION;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE TABLE [Companies] (
         [Id] int NOT NULL IDENTITY,
@@ -21,7 +21,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE TABLE [UserTypes] (
         [Id] int NOT NULL IDENTITY,
@@ -31,7 +31,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE TABLE [Users] (
         [Id] uniqueidentifier NOT NULL,
@@ -47,11 +47,12 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE TABLE [Transportations] (
         [Id] uniqueidentifier NOT NULL,
         [UserId] uniqueidentifier NOT NULL,
+        [CompanyName] nvarchar(max) NULL,
         [TransportationNumber] int NOT NULL,
         [Weight] int NOT NULL,
         [WagonsCount] int NOT NULL,
@@ -73,7 +74,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE TABLE [Wagons] (
         [Id] uniqueidentifier NOT NULL,
@@ -87,90 +88,104 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[Companies]'))
         SET IDENTITY_INSERT [Companies] ON;
     EXEC(N'INSERT INTO [Companies] ([Id], [Name])
-    VALUES (1, N''Rivita'')');
+    VALUES (1, N''Rivita''),
+    (2, N''Linas Agro''),
+    (3, N''Mestilla'')');
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[Companies]'))
         SET IDENTITY_INSERT [Companies] OFF;
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Title') AND [object_id] = OBJECT_ID(N'[UserTypes]'))
         SET IDENTITY_INSERT [UserTypes] ON;
     EXEC(N'INSERT INTO [UserTypes] ([Id], [Title])
-    VALUES (1, N''ADMINISTRATOR'')');
+    VALUES (1, N''ADMINISTRATOR''),
+    (2, N''USER'')');
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Title') AND [object_id] = OBJECT_ID(N'[UserTypes]'))
         SET IDENTITY_INSERT [UserTypes] OFF;
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Title') AND [object_id] = OBJECT_ID(N'[UserTypes]'))
-        SET IDENTITY_INSERT [UserTypes] ON;
-    EXEC(N'INSERT INTO [UserTypes] ([Id], [Title])
-    VALUES (2, N''USER'')');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Title') AND [object_id] = OBJECT_ID(N'[UserTypes]'))
-        SET IDENTITY_INSERT [UserTypes] OFF;
-END;
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
         SET IDENTITY_INSERT [Users] ON;
     EXEC(N'INSERT INTO [Users] ([Id], [CompanyId], [Password], [PhoneNumber], [TypeId], [Username])
-    VALUES (''c9490c27-1b89-4e39-8f2e-99b48dcc709e'', 1, N''$2a$11$Kufw.f10S3aacLOosVG9p.fGi2e2pRX5tcKQYz5woDt.YnFa70ana'', N''+37061816214'', 1, N''jevgenijrivita'')');
+    VALUES (''c9490c27-1b89-4e39-8f2e-99b48dcc709e'', 1, N''$2a$11$nftTyo5XZMTxs7DKK/GP4esn.puNlqmGxJXbOzYPwYP3ftLqDYBy.'', N''+37061816214'', 1, N''jevgenijrivita'')');
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
         SET IDENTITY_INSERT [Users] OFF;
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] ON;
+    EXEC(N'INSERT INTO [Users] ([Id], [CompanyId], [Password], [PhoneNumber], [TypeId], [Username])
+    VALUES (''c9490c27-1b89-4e39-8f2e-99b48dcc901d'', 1, N''$2a$11$/dkNI3jt0qMTcaeyD84Y4OHXjrnpWuXrucXYVE2n4lTPuLPN31Uce'', N''+37060855183'', 1, N''lukasrivita'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] OFF;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] ON;
+    EXEC(N'INSERT INTO [Users] ([Id], [CompanyId], [Password], [PhoneNumber], [TypeId], [Username])
+    VALUES (''c9490c27-1b89-4e39-8f2e-99b48dcc102e'', 3, N''$2a$11$D1C2Kv6xB9JChbRGPOEW.OBVthDva2D0ru31.CtGGBXTosR7RdWm6'', N''+37060855183'', 2, N''jonasmestilla'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CompanyId', N'Password', N'PhoneNumber', N'TypeId', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] OFF;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE UNIQUE INDEX [IX_Transportations_TransportationNumber] ON [Transportations] ([TransportationNumber]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE INDEX [IX_Transportations_UserId] ON [Transportations] ([UserId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE INDEX [IX_Users_CompanyId] ON [Users] ([CompanyId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE INDEX [IX_Users_TypeId] ON [Users] ([TypeId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     EXEC(N'CREATE UNIQUE INDEX [IX_Users_Username] ON [Users] ([Username]) WHERE [Username] IS NOT NULL');
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     CREATE INDEX [IX_Wagons_TransportationId] ON [Wagons] ([TransportationId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211210220405_createDB')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211211192905_createdDB')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211210220405_createDB', N'5.0.11');
+    VALUES (N'20211211192905_createdDB', N'5.0.11');
 END;
 GO
 
