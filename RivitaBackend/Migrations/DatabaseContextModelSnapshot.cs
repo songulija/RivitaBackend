@@ -38,6 +38,11 @@ namespace RivitaBackend.Migrations
                         {
                             Id = 1,
                             Name = "Rivita"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Linas Agro"
                         });
                 });
 
@@ -49,6 +54,9 @@ namespace RivitaBackend.Migrations
 
                     b.Property<DateTime>("CargoAcceptanceDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DepartureCountryTitle")
                         .HasColumnType("nvarchar(max)");
@@ -143,7 +151,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"),
                             CompanyId = 1,
-                            Password = "$2a$11$Kufw.f10S3aacLOosVG9p.fGi2e2pRX5tcKQYz5woDt.YnFa70ana",
+                            Password = "$2a$11$N5UxGnynN2dACKX6/V8PvOXmoN.MAQUtJVyllt.yh4.8fWCyEfR0a",
                             PhoneNumber = "+37061816214",
                             TypeId = 1,
                             Username = "jevgenijrivita"

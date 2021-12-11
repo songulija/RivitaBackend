@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RivitaBackend.Migrations
 {
-    public partial class createDB : Migration
+    public partial class createdDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,6 +67,7 @@ namespace RivitaBackend.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TransportationNumber = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<int>(type: "int", nullable: false),
                     WagonsCount = table.Column<int>(type: "int", nullable: false),
@@ -118,22 +119,25 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "Companies",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "Rivita" });
+                values: new object[,]
+                {
+                    { 1, "Rivita" },
+                    { 2, "Linas Agro" }
+                });
 
             migrationBuilder.InsertData(
                 table: "UserTypes",
                 columns: new[] { "Id", "Title" },
-                values: new object[] { 1, "ADMINISTRATOR" });
-
-            migrationBuilder.InsertData(
-                table: "UserTypes",
-                columns: new[] { "Id", "Title" },
-                values: new object[] { 2, "USER" });
+                values: new object[,]
+                {
+                    { 1, "ADMINISTRATOR" },
+                    { 2, "USER" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$Kufw.f10S3aacLOosVG9p.fGi2e2pRX5tcKQYz5woDt.YnFa70ana", "+37061816214", 1, "jevgenijrivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$N5UxGnynN2dACKX6/V8PvOXmoN.MAQUtJVyllt.yh4.8fWCyEfR0a", "+37061816214", 1, "jevgenijrivita" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transportations_TransportationNumber",

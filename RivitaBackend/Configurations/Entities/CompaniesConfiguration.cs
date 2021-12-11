@@ -17,6 +17,11 @@ namespace RivitaBackend.Configurations.Entities
                 {
                     Id = 1,
                     Name = "Rivita"
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "Linas Agro"
                 }
             );
         }

@@ -14,6 +14,8 @@ namespace RivitaBackend.ModelsDTO
         //[Required]
         public Guid UserId { get; set; }
         [Required]
+        public string CompanyName { get; set; }
+        [Required]
         public int TransportationNumber { get; set; }
         [Required]
         public int Weight { get; set; }

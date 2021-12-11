@@ -16,6 +16,7 @@ namespace RivitaBackend.Models
         [ForeignKey(nameof(Models.User))]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
+        public string CompanyName { get; set; }
         public int TransportationNumber { get; set; }
         public int Weight { get; set; }
         public int WagonsCount { get; set; }
