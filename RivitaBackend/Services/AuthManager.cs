@@ -87,7 +87,7 @@ namespace RivitaBackend.Services
             var company = await _unitOfWork.Companies.Get(c => c.Id == _user.CompanyId);
             var companyName = company.Name;
             claims.Add(new Claim(ClaimTypes.Role, roleName));
-            claims.Add(new Claim("CompanyName", companyName));
+            claims.Add(new Claim("Company", companyName));
 
             return claims;
         }
