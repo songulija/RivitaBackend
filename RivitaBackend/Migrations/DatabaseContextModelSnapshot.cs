@@ -81,7 +81,7 @@ namespace RivitaBackend.Migrations
                     b.Property<int>("GngCargoCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("MovementEndDateInBelarus")
+                    b.Property<DateTime?>("MovementEndDateInBelarus")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("MovementStartDateInBelarus")
@@ -156,7 +156,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"),
                             CompanyId = 1,
-                            Password = "$2a$11$nftTyo5XZMTxs7DKK/GP4esn.puNlqmGxJXbOzYPwYP3ftLqDYBy.",
+                            Password = "$2a$11$5vmcJpqv7ZeDL4vXDi9b5OJHjtsUuwxmHmlB4NDy9qZqwtYFSMo.O",
                             PhoneNumber = "+37061816214",
                             TypeId = 1,
                             Username = "jevgenijrivita"
@@ -165,7 +165,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"),
                             CompanyId = 1,
-                            Password = "$2a$11$/dkNI3jt0qMTcaeyD84Y4OHXjrnpWuXrucXYVE2n4lTPuLPN31Uce",
+                            Password = "$2a$11$/Ukf4OKgGzkM4NvmaO9kg.pMNGpnCUzdRax6JrXJGVS0y6ETamCve",
                             PhoneNumber = "+37060855183",
                             TypeId = 1,
                             Username = "lukasrivita"
@@ -174,7 +174,7 @@ namespace RivitaBackend.Migrations
                         {
                             Id = new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"),
                             CompanyId = 3,
-                            Password = "$2a$11$D1C2Kv6xB9JChbRGPOEW.OBVthDva2D0ru31.CtGGBXTosR7RdWm6",
+                            Password = "$2a$11$69ekZz5gfJPnA.tXaB2TreRXNFc8QuYebJaUaVCSd5E/7vakfm.PW",
                             PhoneNumber = "+37060855183",
                             TypeId = 2,
                             Username = "jonasmestilla"

@@ -29,7 +29,7 @@ namespace RivitaBackend.ModelsDTO
         [Required]
         public DateTime MovementStartDateInBelarus { get; set; }
         //not required becouse admin will be able to update it later
-        public DateTime MovementEndDateInBelarus { get; set; }
+        public DateTime? MovementEndDateInBelarus { get; set; }
         // Info about Cargo(gruze)
         [Required]
         public int EtsngCargoCode { get; set; }

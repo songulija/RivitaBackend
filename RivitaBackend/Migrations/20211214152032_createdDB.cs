@@ -74,7 +74,7 @@ namespace RivitaBackend.Migrations
                     TransportationType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CargoAcceptanceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovementStartDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MovementEndDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MovementEndDateInBelarus = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EtsngCargoCode = table.Column<int>(type: "int", nullable: false),
                     GngCargoCode = table.Column<int>(type: "int", nullable: false),
                     DepartureStationTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -138,17 +138,17 @@ namespace RivitaBackend.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$nftTyo5XZMTxs7DKK/GP4esn.puNlqmGxJXbOzYPwYP3ftLqDYBy.", "+37061816214", 1, "jevgenijrivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc709e"), 1, "$2a$11$5vmcJpqv7ZeDL4vXDi9b5OJHjtsUuwxmHmlB4NDy9qZqwtYFSMo.O", "+37061816214", 1, "jevgenijrivita" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"), 1, "$2a$11$/dkNI3jt0qMTcaeyD84Y4OHXjrnpWuXrucXYVE2n4lTPuLPN31Uce", "+37060855183", 1, "lukasrivita" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc901d"), 1, "$2a$11$/Ukf4OKgGzkM4NvmaO9kg.pMNGpnCUzdRax6JrXJGVS0y6ETamCve", "+37060855183", 1, "lukasrivita" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CompanyId", "Password", "PhoneNumber", "TypeId", "Username" },
-                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"), 3, "$2a$11$D1C2Kv6xB9JChbRGPOEW.OBVthDva2D0ru31.CtGGBXTosR7RdWm6", "+37060855183", 2, "jonasmestilla" });
+                values: new object[] { new Guid("c9490c27-1b89-4e39-8f2e-99b48dcc102e"), 3, "$2a$11$69ekZz5gfJPnA.tXaB2TreRXNFc8QuYebJaUaVCSd5E/7vakfm.PW", "+37060855183", 2, "jonasmestilla" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transportations_TransportationNumber",

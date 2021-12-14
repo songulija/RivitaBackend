@@ -24,7 +24,7 @@ namespace RivitaBackend.Models
         // All Dates of Transportation
         public DateTime CargoAcceptanceDate { get; set; }
         public DateTime MovementStartDateInBelarus { get; set; }
-        public DateTime MovementEndDateInBelarus { get; set; }
+        public DateTime? MovementEndDateInBelarus { get; set; }
         // Info about Cargo(gruze)
         public int EtsngCargoCode { get; set; }
         public int GngCargoCode { get; set; }

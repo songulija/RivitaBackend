@@ -1,0 +1,1271 @@
+2021-12-14 16:27:06.604 +02:00 [INF] Application Is Starting
+{Exception]2021-12-14 16:27:11.813 +02:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+{Exception]2021-12-14 16:27:12.952 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+{Exception]2021-12-14 16:27:12.952 +02:00 [INF] Hosting environment: Development
+{Exception]2021-12-14 16:27:12.952 +02:00 [INF] Content root path: D:\AspNetApps\RivitaBackend\RivitaBackend
+{Exception]2021-12-14 16:27:13.008 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/index.html - -
+{Exception]2021-12-14 16:27:13.292 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/index.html - - - 200 - text/html;charset=utf-8 284.0316ms
+{Exception]2021-12-14 16:27:13.834 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - -
+{Exception]2021-12-14 16:27:14.127 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 292.8195ms
+{Exception]2021-12-14 17:07:28.005 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:07:28.038 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:28.044 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 39.8825ms
+{Exception]2021-12-14 17:07:28.046 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:07:28.047 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:30.113 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:30.121 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:30.123 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:30.185 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:07:32.985 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:34.564 +02:00 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:07:34.687 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:34.880 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 4689.7819ms
+{Exception]2021-12-14 17:07:34.881 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:34.893 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1807 application/json;+charset=utf-8 6846.1666ms
+{Exception]2021-12-14 17:07:42.737 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - -
+{Exception]2021-12-14 17:07:42.738 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:42.738 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - - - 204 - - 0.8857ms
+{Exception]2021-12-14 17:07:42.741 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54
+{Exception]2021-12-14 17:07:42.741 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:42.746 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:07:42.772 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Accounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginUser(RivitaBackend.ModelsDTO.LoginUserDTO) on controller RivitaBackend.Controllers.AccountsController (RivitaBackend).
+{Exception]2021-12-14 17:07:42.874 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:43.047 +02:00 [INF] Executed DbCommand (148ms) [Parameters=[@__userDTO_Username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userDTO_Username_0
+{Exception]2021-12-14 17:07:43.273 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@___user_TypeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Title]
+FROM [UserTypes] AS [u]
+WHERE [u].[Id] = @___user_TypeId_0
+{Exception]2021-12-14 17:07:43.294 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@___user_CompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[Id] = @___user_CompanyId_0
+{Exception]2021-12-14 17:07:43.313 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+{Exception]2021-12-14 17:07:43.319 +02:00 [INF] Executed action RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend) in 547.1629ms
+{Exception]2021-12-14 17:07:43.319 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:07:43.319 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54 - 202 528 application/json;+charset=utf-8 578.7496ms
+{Exception]2021-12-14 17:07:46.743 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:07:46.743 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:46.744 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.6024ms
+{Exception]2021-12-14 17:07:46.746 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:07:46.746 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:46.750 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:46.751 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:46.751 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:46.752 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:07:46.769 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:46.777 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:07:46.778 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:46.779 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 27.5007ms
+{Exception]2021-12-14 17:07:46.779 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:46.780 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1807 application/json;+charset=utf-8 34.0074ms
+{Exception]2021-12-14 17:07:46.960 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:07:46.960 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:46.960 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2779ms
+{Exception]2021-12-14 17:07:46.962 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:07:46.962 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:46.963 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:46.964 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:46.964 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:07:46.968 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:07:46.969 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:46.988 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:07:46.997 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:47.002 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 33.9784ms
+{Exception]2021-12-14 17:07:47.002 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:07:47.002 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 40.0562ms
+{Exception]2021-12-14 17:07:48.575 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:07:48.576 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:48.577 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:48.577 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:48.577 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:48.577 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:07:48.578 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:48.583 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:07:48.585 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:48.585 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 8.0391ms
+{Exception]2021-12-14 17:07:48.586 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:07:48.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1807 application/json;+charset=utf-8 10.5796ms
+{Exception]2021-12-14 17:07:48.683 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:48.683 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:48.683 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.3851ms
+{Exception]2021-12-14 17:07:48.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:48.686 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:48.687 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:48.688 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:48.688 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:48.693 +02:00 [INF] Route matched with {action = "GetWagonsByTransportation", controller = "Wagons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWagonsByTransportation(System.Guid) on controller RivitaBackend.Controllers.WagonsController (RivitaBackend).
+{Exception]2021-12-14 17:07:48.696 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:48.761 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[NumberOfWagon], [w].[TransportationId], [w].[TypeOfWagon], [w].[Weight], [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Wagons] AS [w]
+INNER JOIN [Transportations] AS [t] ON [w].[TransportationId] = [t].[Id]
+WHERE [w].[TransportationId] = @__id_0
+{Exception]2021-12-14 17:07:48.763 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.Models.Wagon, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:48.765 +02:00 [INF] Executed action RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend) in 71.9896ms
+{Exception]2021-12-14 17:07:48.765 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:48.765 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 200 2 application/json;+charset=utf-8 78.7952ms
+{Exception]2021-12-14 17:07:53.302 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:53.302 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:53.303 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - - - 204 - - 0.4757ms
+{Exception]2021-12-14 17:07:53.313 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Wagons/transportation/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:53.313 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:53.316 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:53.316 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:53.316 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:53.316 +02:00 [INF] Route matched with {action = "GetWagonsByTransportation", controller = "Wagons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWagonsByTransportation(System.Guid) on controller RivitaBackend.Controllers.WagonsController (RivitaBackend).
+{Exception]2021-12-14 17:07:53.317 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:53.322 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[NumberOfWagon], [w].[TransportationId], [w].[TypeOfWagon], [w].[Weight], [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Wagons] AS [w]
+INNER JOIN [Transportations] AS [t] ON [w].[TransportationId] = [t].[Id]
+WHERE [w].[TransportationId] = @__id_0
+{Exception]2021-12-14 17:07:53.324 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.Models.Wagon, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:53.326 +02:00 [INF] Executed action RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend) in 9.6015ms
+{Exception]2021-12-14 17:07:53.326 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:53.326 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Wagons/transportation/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - - - 200 2 application/json;+charset=utf-8 12.9825ms
+{Exception]2021-12-14 17:07:54.319 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:54.319 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:54.319 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.5064ms
+{Exception]2021-12-14 17:07:54.322 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:07:54.322 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:54.323 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:54.324 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:54.324 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:54.324 +02:00 [INF] Route matched with {action = "GetWagonsByTransportation", controller = "Wagons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWagonsByTransportation(System.Guid) on controller RivitaBackend.Controllers.WagonsController (RivitaBackend).
+{Exception]2021-12-14 17:07:54.324 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:54.326 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[NumberOfWagon], [w].[TransportationId], [w].[TypeOfWagon], [w].[Weight], [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Wagons] AS [w]
+INNER JOIN [Transportations] AS [t] ON [w].[TransportationId] = [t].[Id]
+WHERE [w].[TransportationId] = @__id_0
+{Exception]2021-12-14 17:07:54.328 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.Models.Wagon, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:54.328 +02:00 [INF] Executed action RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend) in 4.4894ms
+{Exception]2021-12-14 17:07:54.329 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:07:54.329 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Wagons/transportation/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 200 2 application/json;+charset=utf-8 6.8497ms
+{Exception]2021-12-14 17:07:56.424 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:07:56.425 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:56.426 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 1.3460ms
+{Exception]2021-12-14 17:07:56.432 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:07:56.432 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:07:56.433 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:07:56.433 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:07:56.433 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:07:56.433 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:07:56.434 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:07:56.437 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:07:56.438 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:07:56.438 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.0496ms
+{Exception]2021-12-14 17:07:56.439 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:07:56.439 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.8566ms
+{Exception]2021-12-14 17:08:10.515 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - -
+{Exception]2021-12-14 17:08:10.515 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:10.515 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - - - 204 - - 0.5621ms
+{Exception]2021-12-14 17:08:10.519 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54
+{Exception]2021-12-14 17:08:10.519 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:10.520 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:08:10.520 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Accounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginUser(RivitaBackend.ModelsDTO.LoginUserDTO) on controller RivitaBackend.Controllers.AccountsController (RivitaBackend).
+{Exception]2021-12-14 17:08:10.526 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:08:10.530 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userDTO_Username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userDTO_Username_0
+{Exception]2021-12-14 17:08:10.728 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@___user_TypeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Title]
+FROM [UserTypes] AS [u]
+WHERE [u].[Id] = @___user_TypeId_0
+{Exception]2021-12-14 17:08:10.731 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@___user_CompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[Id] = @___user_CompanyId_0
+{Exception]2021-12-14 17:08:10.732 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+{Exception]2021-12-14 17:08:10.732 +02:00 [INF] Executed action RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend) in 211.5227ms
+{Exception]2021-12-14 17:08:10.732 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:08:10.732 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54 - 202 528 application/json;+charset=utf-8 213.5864ms
+{Exception]2021-12-14 17:08:15.961 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:08:15.961 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:15.961 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.4339ms
+{Exception]2021-12-14 17:08:15.963 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:08:15.963 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:15.964 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:08:15.964 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:08:15.964 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:08:15.964 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:08:15.965 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:08:15.971 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:08:15.972 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:08:15.973 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 8.3085ms
+{Exception]2021-12-14 17:08:15.973 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:08:15.974 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1807 application/json;+charset=utf-8 10.7102ms
+{Exception]2021-12-14 17:08:16.164 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:08:16.164 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:16.165 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3278ms
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:08:16.167 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:08:16.168 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:08:16.171 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:08:16.172 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:08:16.173 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.4712ms
+{Exception]2021-12-14 17:08:16.173 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:08:16.174 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.9092ms
+{Exception]2021-12-14 17:08:29.956 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:08:29.957 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:29.957 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.4042ms
+{Exception]2021-12-14 17:08:29.959 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 481
+{Exception]2021-12-14 17:08:29.959 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:08:29.960 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:08:29.960 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:08:29.960 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:08:29.964 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:08:30.000 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+{Exception]2021-12-14 17:08:30.028 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 63.6469ms
+{Exception]2021-12-14 17:08:30.028 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:08:30.117 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 481 - 400 255 application/problem+json;+charset=utf-8 158.0763ms
+{Exception]2021-12-14 17:09:54.892 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:09:54.893 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:09:54.894 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 1.6072ms
+{Exception]2021-12-14 17:09:54.898 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509
+{Exception]2021-12-14 17:09:54.898 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:09:54.900 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:09:54.900 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:09:54.900 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:09:54.900 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:09:54.909 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:09:54.927 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:09:55.478 +02:00 [INF] Executed DbCommand (173ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:09:55.512 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:09:55.512 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 611.9755ms
+{Exception]2021-12-14 17:09:55.512 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:09:55.513 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509 - 204 - - 614.5529ms
+{Exception]2021-12-14 17:10:00.926 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:10:00.926 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:00.927 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.4504ms
+{Exception]2021-12-14 17:10:00.928 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509
+{Exception]2021-12-14 17:10:00.928 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:00.929 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:00.930 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:00.930 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:00.930 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:00.931 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:00.936 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:10:00.944 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:10:00.946 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:10:00.946 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 15.7021ms
+{Exception]2021-12-14 17:10:00.946 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:00.946 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509 - 204 - - 17.7094ms
+{Exception]2021-12-14 17:10:05.303 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:05.303 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:05.304 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.6539ms
+{Exception]2021-12-14 17:10:05.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:05.307 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:05.307 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:05.307 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:05.307 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:05.307 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:05.308 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:05.312 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:10:05.312 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:05.313 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 5.8364ms
+{Exception]2021-12-14 17:10:05.313 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:05.313 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1803 application/json;+charset=utf-8 7.4508ms
+{Exception]2021-12-14 17:10:05.851 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:05.851 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:05.851 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.4286ms
+{Exception]2021-12-14 17:10:05.854 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:05.854 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:05.855 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:05.855 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:05.855 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:05.855 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:10:05.856 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:05.858 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:10:05.859 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:05.860 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.1985ms
+{Exception]2021-12-14 17:10:05.860 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:05.860 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 5.7987ms
+{Exception]2021-12-14 17:10:19.914 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:10:19.914 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:19.914 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.5296ms
+{Exception]2021-12-14 17:10:19.917 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508
+{Exception]2021-12-14 17:10:19.917 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:19.918 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:19.918 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:19.918 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:19.918 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:19.919 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:19.920 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:10:19.925 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:10:19.927 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:10:19.927 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 8.7515ms
+{Exception]2021-12-14 17:10:19.927 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:19.927 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508 - 204 - - 9.8356ms
+{Exception]2021-12-14 17:10:30.883 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:30.883 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:30.883 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3910ms
+{Exception]2021-12-14 17:10:30.885 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:30.885 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:30.885 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:30.885 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:30.886 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:30.886 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:30.886 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:30.890 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:10:30.890 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:30.891 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 5.259ms
+{Exception]2021-12-14 17:10:30.891 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:30.891 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1802 application/json;+charset=utf-8 6.2535ms
+{Exception]2021-12-14 17:10:31.363 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:31.363 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:31.363 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2945ms
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:31.365 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:10:31.366 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:31.368 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:10:31.369 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:31.370 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.0434ms
+{Exception]2021-12-14 17:10:31.370 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:31.370 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 5.1075ms
+{Exception]2021-12-14 17:10:40.230 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:10:40.230 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:40.231 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.3756ms
+{Exception]2021-12-14 17:10:40.232 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508
+{Exception]2021-12-14 17:10:40.232 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:40.233 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:40.233 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:40.233 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:40.233 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:40.233 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:40.237 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:10:40.246 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:10:40.248 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:10:40.248 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 15.0556ms
+{Exception]2021-12-14 17:10:40.248 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:40.248 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508 - 204 - - 15.9268ms
+{Exception]2021-12-14 17:10:49.628 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:10:49.628 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:49.629 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.3541ms
+{Exception]2021-12-14 17:10:49.630 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 513
+{Exception]2021-12-14 17:10:49.630 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:49.630 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:49.631 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:49.631 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:49.631 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:49.631 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:49.633 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:10:49.637 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:10:49.639 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:10:49.639 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 8.2185ms
+{Exception]2021-12-14 17:10:49.639 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:10:49.639 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 513 - 204 - - 9.4186ms
+{Exception]2021-12-14 17:10:58.064 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:58.064 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:58.064 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.4471ms
+{Exception]2021-12-14 17:10:58.066 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:10:58.066 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:58.067 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:58.067 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:58.067 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:58.067 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:10:58.067 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:58.069 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:10:58.071 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:58.071 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 3.8207ms
+{Exception]2021-12-14 17:10:58.071 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:10:58.071 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1807 application/json;+charset=utf-8 5.0156ms
+{Exception]2021-12-14 17:10:58.524 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:58.525 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:58.525 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3013ms
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:10:58.527 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:10:58.529 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:10:58.530 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:10:58.531 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 3.8124ms
+{Exception]2021-12-14 17:10:58.531 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:10:58.531 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 4.8746ms
+{Exception]2021-12-14 17:11:03.997 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:11:03.997 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:03.997 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.4463ms
+{Exception]2021-12-14 17:11:03.999 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509
+{Exception]2021-12-14 17:11:03.999 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:03.999 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:04.000 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:04.000 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:11:04.000 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:11:04.001 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:04.005 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:11:04.049 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:11:04.067 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:11:04.067 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 67.0667ms
+{Exception]2021-12-14 17:11:04.067 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:11:04.067 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 509 - 204 - - 68.4372ms
+{Exception]2021-12-14 17:11:16.390 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:11:16.390 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:16.391 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.4494ms
+{Exception]2021-12-14 17:11:16.394 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:11:16.394 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:16.394 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:16.394 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:16.395 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:11:16.395 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:11:16.395 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:16.399 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:11:16.399 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:11:16.399 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 4.6099ms
+{Exception]2021-12-14 17:11:16.399 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:11:16.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1803 application/json;+charset=utf-8 5.7041ms
+{Exception]2021-12-14 17:11:16.872 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:11:16.872 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:16.872 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3131ms
+{Exception]2021-12-14 17:11:16.874 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:11:16.874 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:16.875 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:16.875 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:16.875 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:11:16.875 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:11:16.875 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:16.878 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:11:16.879 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:11:16.880 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.4548ms
+{Exception]2021-12-14 17:11:16.880 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:11:16.880 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.1261ms
+{Exception]2021-12-14 17:11:25.303 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - -
+{Exception]2021-12-14 17:11:25.304 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:25.304 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/6aeb040a-3bab-4193-5e2d-08d9bca2d078 - - - 204 - - 0.5199ms
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/6aeb040a-3bab-4193-5e2d-08d9bca2d078 application/json 517
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:11:25.306 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:11:25.307 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:25.309 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:11:25.313 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:11:25.314 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:11:25.314 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 7.4713ms
+{Exception]2021-12-14 17:11:25.314 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:11:25.314 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/6aeb040a-3bab-4193-5e2d-08d9bca2d078 application/json 517 - 204 - - 8.5032ms
+{Exception]2021-12-14 17:11:45.173 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:11:45.173 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:45.173 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3470ms
+{Exception]2021-12-14 17:11:45.175 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:11:45.175 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:45.176 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:45.176 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:45.176 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:11:45.176 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:11:45.176 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:45.181 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:11:45.181 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:11:45.182 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 5.8572ms
+{Exception]2021-12-14 17:11:45.182 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:11:45.183 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1793 application/json;+charset=utf-8 7.6677ms
+{Exception]2021-12-14 17:11:45.386 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:11:45.386 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:45.386 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.1869ms
+{Exception]2021-12-14 17:11:45.388 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:11:45.388 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:11:45.388 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:11:45.388 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:11:45.389 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:11:45.389 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:11:45.389 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:11:45.392 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:11:45.393 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:11:45.394 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.8661ms
+{Exception]2021-12-14 17:11:45.394 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:11:45.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.0779ms
+{Exception]2021-12-14 17:12:23.080 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - -
+{Exception]2021-12-14 17:12:23.080 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:23.080 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 - - - 204 - - 0.3892ms
+{Exception]2021-12-14 17:12:23.084 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508
+{Exception]2021-12-14 17:12:23.085 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:23.096 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:12:23.096 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:12:23.096 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:12:23.096 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:12:23.097 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:12:23.106 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:12:23.227 +02:00 [INF] Executed DbCommand (120ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:12:23.253 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:12:23.253 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 157.3241ms
+{Exception]2021-12-14 17:12:23.253 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:12:23.254 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/023a119b-01a2-4478-5e2c-08d9bca2d078 application/json 508 - 204 - - 169.3487ms
+{Exception]2021-12-14 17:12:27.645 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:12:27.645 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:27.645 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3688ms
+{Exception]2021-12-14 17:12:27.647 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:12:27.648 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:27.648 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:12:27.648 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:12:27.648 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:12:27.648 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:12:27.649 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:12:27.653 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:12:27.658 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:12:27.659 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 10.7824ms
+{Exception]2021-12-14 17:12:27.659 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:12:27.660 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1792 application/json;+charset=utf-8 12.8513ms
+{Exception]2021-12-14 17:12:27.874 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:12:27.874 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:27.874 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.1823ms
+{Exception]2021-12-14 17:12:27.875 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:12:27.875 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:12:27.875 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:12:27.876 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:12:27.876 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:12:27.876 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:12:27.876 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:12:27.878 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:12:27.879 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:12:27.879 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 3.4742ms
+{Exception]2021-12-14 17:12:27.879 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:12:27.880 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 4.3940ms
+{Exception]2021-12-14 17:15:46.319 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:15:46.319 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:46.319 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3998ms
+{Exception]2021-12-14 17:15:46.324 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Transportations application/json 498
+{Exception]2021-12-14 17:15:46.324 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:46.325 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:15:46.325 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:15:46.325 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:15:46.328 +02:00 [INF] Route matched with {action = "InsertTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertTransportation(RivitaBackend.ModelsDTO.CreateTransportationDTO) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:15:46.686 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+{Exception]2021-12-14 17:15:46.687 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend) in 359.2198ms
+{Exception]2021-12-14 17:15:46.687 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:15:46.691 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Transportations application/json 498 - 400 345 application/problem+json;+charset=utf-8 366.7138ms
+{Exception]2021-12-14 17:15:53.157 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:15:53.157 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:53.157 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3457ms
+{Exception]2021-12-14 17:15:53.159 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:15:53.159 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:53.160 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:15:53.160 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:15:53.160 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:15:53.160 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:15:53.161 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:15:53.167 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:15:53.172 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:15:53.173 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 12.5042ms
+{Exception]2021-12-14 17:15:53.173 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:15:53.173 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1792 application/json;+charset=utf-8 13.9279ms
+{Exception]2021-12-14 17:15:53.451 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:15:53.451 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:53.451 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2689ms
+{Exception]2021-12-14 17:15:53.453 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:15:53.453 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:15:53.454 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:15:53.454 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:15:53.454 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:15:53.454 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:15:53.454 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:15:53.457 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:15:53.458 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:15:53.458 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.121ms
+{Exception]2021-12-14 17:15:53.458 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:15:53.458 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 5.1166ms
+{Exception]2021-12-14 17:17:03.321 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:17:03.321 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:17:03.321 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.2407ms
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Transportations application/json 493
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:17:03.325 +02:00 [INF] Route matched with {action = "InsertTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertTransportation(RivitaBackend.ModelsDTO.CreateTransportationDTO) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:17:03.326 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+{Exception]2021-12-14 17:17:03.326 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend) in 1.0722ms
+{Exception]2021-12-14 17:17:03.326 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:17:03.327 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Transportations application/json 493 - 400 345 application/problem+json;+charset=utf-8 2.5791ms
+{Exception]2021-12-14 17:17:12.957 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:17:12.959 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+{Exception]2021-12-14 17:17:13.099 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+{Exception]2021-12-14 17:17:13.187 +02:00 [ERR] Something went Wrong in the System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+{Exception]2021-12-14 17:17:13.191 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 500 - application/json 234.4677ms
+{Exception]2021-12-14 17:17:13.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/favicon.ico - -
+{Exception]2021-12-14 17:17:13.317 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/favicon.ico - - - 404 - - 0.9254ms
+{Exception]2021-12-14 17:21:25.222 +02:00 [INF] Application Is Starting
+{Exception]2021-12-14 17:21:26.629 +02:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+{Exception]2021-12-14 17:21:27.308 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+{Exception]2021-12-14 17:21:27.308 +02:00 [INF] Hosting environment: Development
+{Exception]2021-12-14 17:21:27.308 +02:00 [INF] Content root path: D:\AspNetApps\RivitaBackend\RivitaBackend
+{Exception]2021-12-14 17:21:27.357 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/index.html - -
+{Exception]2021-12-14 17:21:27.515 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/index.html - - - 200 - text/html;charset=utf-8 160.7727ms
+{Exception]2021-12-14 17:21:27.879 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - -
+{Exception]2021-12-14 17:21:28.030 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.9399ms
+{Exception]2021-12-14 17:21:48.376 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - -
+{Exception]2021-12-14 17:21:48.382 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:48.384 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Accounts/login - - - 204 - - 8.1096ms
+{Exception]2021-12-14 17:21:48.387 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54
+{Exception]2021-12-14 17:21:48.387 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:48.629 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:21:48.661 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Accounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginUser(RivitaBackend.ModelsDTO.LoginUserDTO) on controller RivitaBackend.Controllers.AccountsController (RivitaBackend).
+{Exception]2021-12-14 17:21:50.767 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:21:51.566 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@__userDTO_Username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userDTO_Username_0
+{Exception]2021-12-14 17:21:51.857 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@___user_TypeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Title]
+FROM [UserTypes] AS [u]
+WHERE [u].[Id] = @___user_TypeId_0
+{Exception]2021-12-14 17:21:51.864 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@___user_CompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[Id] = @___user_CompanyId_0
+{Exception]2021-12-14 17:21:52.106 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+{Exception]2021-12-14 17:21:52.172 +02:00 [INF] Executed action RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend) in 3503.6728ms
+{Exception]2021-12-14 17:21:52.173 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.AccountsController.LoginUser (RivitaBackend)'
+{Exception]2021-12-14 17:21:52.182 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Accounts/login application/json 54 - 202 528 application/json;+charset=utf-8 3794.8482ms
+{Exception]2021-12-14 17:21:56.785 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:21:56.786 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:56.786 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 1.4238ms
+{Exception]2021-12-14 17:21:56.788 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:21:56.789 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:56.885 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:21:56.891 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:21:56.892 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:21:56.896 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:21:56.954 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:21:57.045 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:21:57.082 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:21:57.092 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 195.3881ms
+{Exception]2021-12-14 17:21:57.092 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:21:57.093 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2 application/json;+charset=utf-8 304.5057ms
+{Exception]2021-12-14 17:21:57.139 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:21:57.140 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:57.140 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3260ms
+{Exception]2021-12-14 17:21:57.141 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:21:57.141 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:21:57.143 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:21:57.144 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:21:57.145 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:21:57.147 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:21:57.157 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:21:57.162 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:21:57.177 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:21:57.183 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 35.742ms
+{Exception]2021-12-14 17:21:57.183 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:21:57.184 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 42.3935ms
+{Exception]2021-12-14 17:23:32.766 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:23:32.766 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:23:32.767 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 1.4263ms
+{Exception]2021-12-14 17:23:32.770 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Transportations application/json 493
+{Exception]2021-12-14 17:23:32.770 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:23:32.771 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:23:32.771 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:23:32.772 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:23:32.775 +02:00 [INF] Route matched with {action = "InsertTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertTransportation(RivitaBackend.ModelsDTO.CreateTransportationDTO) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:23:32.819 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:23:33.031 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Transportations] ([Id], [CargoAcceptanceDate], [CompanyName], [DepartureCountryTitle], [DepartureStationTitle], [DestinationCountryTitle], [DestinationStationTitle], [EtsngCargoCode], [GngCargoCode], [MovementEndDateInBelarus], [MovementStartDateInBelarus], [StationMovementBeginingBelarusTitle], [StationMovementEndBelarusTitle], [TransportationNumber], [TransportationType], [UserId], [WagonsCount], [Weight])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+{Exception]2021-12-14 17:23:33.058 +02:00 [INF] Executing CreatedAtRouteResult, writing value of type 'RivitaBackend.Models.Transportation'.
+{Exception]2021-12-14 17:23:33.108 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend) in 332.9325ms
+{Exception]2021-12-14 17:23:33.108 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:23:33.108 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Transportations application/json 493 - 201 629 application/json;+charset=utf-8 337.8025ms
+{Exception]2021-12-14 17:24:01.262 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:24:01.262 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:01.263 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 1.3123ms
+{Exception]2021-12-14 17:24:01.267 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:24:01.268 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:01.268 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:01.269 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:01.269 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:01.269 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:24:01.270 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:01.331 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:24:01.382 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:01.394 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 124.3228ms
+{Exception]2021-12-14 17:24:01.394 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:01.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 878 application/json;+charset=utf-8 127.0942ms
+{Exception]2021-12-14 17:24:01.429 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - -
+{Exception]2021-12-14 17:24:01.429 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:01.429 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Wagons/transportation/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - - - 204 - - 0.3295ms
+{Exception]2021-12-14 17:24:01.431 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Wagons/transportation/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - -
+{Exception]2021-12-14 17:24:01.431 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:01.432 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:01.432 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:01.432 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:24:01.437 +02:00 [INF] Route matched with {action = "GetWagonsByTransportation", controller = "Wagons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWagonsByTransportation(System.Guid) on controller RivitaBackend.Controllers.WagonsController (RivitaBackend).
+{Exception]2021-12-14 17:24:01.442 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:01.460 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[NumberOfWagon], [w].[TransportationId], [w].[TypeOfWagon], [w].[Weight], [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Wagons] AS [w]
+INNER JOIN [Transportations] AS [t] ON [w].[TransportationId] = [t].[Id]
+WHERE [w].[TransportationId] = @__id_0
+{Exception]2021-12-14 17:24:01.463 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.Models.Wagon, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:01.464 +02:00 [INF] Executed action RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend) in 27.5668ms
+{Exception]2021-12-14 17:24:01.465 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.WagonsController.GetWagonsByTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:24:01.465 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Wagons/transportation/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - - - 200 2 application/json;+charset=utf-8 34.1508ms
+{Exception]2021-12-14 17:24:04.915 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:24:04.915 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:04.916 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:04.916 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:04.916 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:04.916 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:24:04.917 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:04.924 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:24:04.924 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:04.925 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 8.6108ms
+{Exception]2021-12-14 17:24:04.925 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:04.925 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 878 application/json;+charset=utf-8 10.3330ms
+{Exception]2021-12-14 17:24:05.113 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:24:05.114 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:05.114 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3645ms
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:24:05.116 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:24:05.117 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:05.119 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:24:05.121 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:05.122 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.6419ms
+{Exception]2021-12-14 17:24:05.122 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:24:05.123 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 7.0775ms
+{Exception]2021-12-14 17:24:13.454 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - -
+{Exception]2021-12-14 17:24:13.454 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:13.454 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations/c3ee75ec-d099-4604-718c-08d9bf15b0a6 - - - 204 - - 0.4504ms
+{Exception]2021-12-14 17:24:13.456 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44338/api/Transportations/c3ee75ec-d099-4604-718c-08d9bf15b0a6 application/json 507
+{Exception]2021-12-14 17:24:13.456 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:13.457 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:13.457 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:13.457 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:24:13.462 +02:00 [INF] Route matched with {action = "UpdateTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransportation(RivitaBackend.ModelsDTO.UpdateTransportationDTO, System.Guid) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:24:13.480 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:13.492 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight]
+FROM [Transportations] AS [t]
+WHERE [t].[Id] = @__id_0
+{Exception]2021-12-14 17:24:13.527 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p17='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Transportations] SET [CargoAcceptanceDate] = @p0, [CompanyName] = @p1, [DepartureCountryTitle] = @p2, [DepartureStationTitle] = @p3, [DestinationCountryTitle] = @p4, [DestinationStationTitle] = @p5, [EtsngCargoCode] = @p6, [GngCargoCode] = @p7, [MovementEndDateInBelarus] = @p8, [MovementStartDateInBelarus] = @p9, [StationMovementBeginingBelarusTitle] = @p10, [StationMovementEndBelarusTitle] = @p11, [TransportationNumber] = @p12, [TransportationType] = @p13, [UserId] = @p14, [WagonsCount] = @p15, [Weight] = @p16
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+{Exception]2021-12-14 17:24:13.535 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+{Exception]2021-12-14 17:24:13.535 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend) in 73.0653ms
+{Exception]2021-12-14 17:24:13.536 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.UpdateTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:24:13.536 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44338/api/Transportations/c3ee75ec-d099-4604-718c-08d9bf15b0a6 application/json 507 - 204 - - 79.9245ms
+{Exception]2021-12-14 17:24:17.538 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:24:17.538 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:17.538 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3480ms
+{Exception]2021-12-14 17:24:17.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:24:17.540 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:17.540 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:17.540 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:17.540 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:17.541 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:24:17.541 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:17.546 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:24:17.547 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:17.547 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 6.8552ms
+{Exception]2021-12-14 17:24:17.548 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:24:17.548 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 891 application/json;+charset=utf-8 7.8955ms
+{Exception]2021-12-14 17:24:17.813 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:24:17.813 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:17.814 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.7485ms
+{Exception]2021-12-14 17:24:17.816 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:24:17.816 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:24:17.818 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:24:17.818 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:24:17.818 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:24:17.819 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:24:17.820 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:24:17.823 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:24:17.825 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:24:17.826 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 7.6354ms
+{Exception]2021-12-14 17:24:17.827 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:24:17.827 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 11.3917ms
+{Exception]2021-12-14 17:28:09.577 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:28:09.581 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:09.582 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 4.5546ms
+{Exception]2021-12-14 17:28:09.584 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:28:09.585 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:09.589 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:28:09.589 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:28:09.589 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:28:09.589 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:28:09.590 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:28:09.596 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:28:09.596 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:28:09.597 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 7.5547ms
+{Exception]2021-12-14 17:28:09.597 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:28:09.602 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 891 application/json;+charset=utf-8 17.9743ms
+{Exception]2021-12-14 17:28:09.850 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:28:09.850 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:09.850 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3998ms
+{Exception]2021-12-14 17:28:09.853 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:28:09.853 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:09.854 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:28:09.854 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:28:09.854 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:28:09.854 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:28:09.855 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:28:09.858 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:28:09.859 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:28:09.860 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.906ms
+{Exception]2021-12-14 17:28:09.860 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:28:09.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 10.7129ms
+{Exception]2021-12-14 17:28:30.140 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:28:30.140 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:30.141 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3740ms
+{Exception]2021-12-14 17:28:30.142 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:28:30.143 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:30.143 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:28:30.143 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:28:30.143 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:28:30.143 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:28:30.144 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:28:30.152 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:28:30.153 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:28:30.153 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 9.8472ms
+{Exception]2021-12-14 17:28:30.153 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:28:30.157 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 891 application/json;+charset=utf-8 14.0722ms
+{Exception]2021-12-14 17:28:30.444 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:28:30.444 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:30.444 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.4206ms
+{Exception]2021-12-14 17:28:30.446 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:28:30.447 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:28:30.448 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:28:30.448 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:28:30.448 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:28:30.448 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:28:30.449 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:28:30.452 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:28:30.453 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:28:30.453 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.0672ms
+{Exception]2021-12-14 17:28:30.454 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:28:30.454 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 7.6342ms
+{Exception]2021-12-14 17:29:51.536 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:29:51.536 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:29:51.539 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 2.6052ms
+{Exception]2021-12-14 17:29:51.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:29:51.544 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:29:51.544 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:29:51.544 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:29:51.544 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:29:51.544 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:29:51.545 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:29:51.558 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:29:51.559 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:29:51.560 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 15.3768ms
+{Exception]2021-12-14 17:29:51.560 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:29:51.560 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 891 application/json;+charset=utf-8 16.9052ms
+{Exception]2021-12-14 17:29:51.834 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:29:51.834 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:29:51.834 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.4164ms
+{Exception]2021-12-14 17:29:51.837 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:29:51.837 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:29:51.838 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:29:51.839 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:29:51.839 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:29:51.839 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:29:51.840 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:29:51.842 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:29:51.843 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:29:51.844 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.5158ms
+{Exception]2021-12-14 17:29:51.844 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:29:51.844 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 7.2599ms
+{Exception]2021-12-14 17:30:50.856 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:30:50.856 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:30:50.856 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3357ms
+{Exception]2021-12-14 17:30:50.860 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Transportations application/json 501
+{Exception]2021-12-14 17:30:50.860 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:30:50.860 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:30:50.860 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:30:50.860 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:30:50.861 +02:00 [INF] Route matched with {action = "InsertTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertTransportation(RivitaBackend.ModelsDTO.CreateTransportationDTO) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:30:50.862 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:30:50.869 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Transportations] ([Id], [CargoAcceptanceDate], [CompanyName], [DepartureCountryTitle], [DepartureStationTitle], [DestinationCountryTitle], [DestinationStationTitle], [EtsngCargoCode], [GngCargoCode], [MovementEndDateInBelarus], [MovementStartDateInBelarus], [StationMovementBeginingBelarusTitle], [StationMovementEndBelarusTitle], [TransportationNumber], [TransportationType], [UserId], [WagonsCount], [Weight])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+{Exception]2021-12-14 17:30:50.871 +02:00 [INF] Executing CreatedAtRouteResult, writing value of type 'RivitaBackend.Models.Transportation'.
+{Exception]2021-12-14 17:30:50.880 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend) in 19.5229ms
+{Exception]2021-12-14 17:30:50.880 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:30:50.885 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Transportations application/json 501 - 201 637 application/json;+charset=utf-8 25.5128ms
+{Exception]2021-12-14 17:30:54.629 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:30:54.631 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:30:54.635 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:30:54.635 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:30:54.635 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:30:54.635 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:30:54.636 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:30:54.642 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:30:54.643 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:30:54.644 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 8.7074ms
+{Exception]2021-12-14 17:30:54.644 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:30:54.648 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 1776 application/json;+charset=utf-8 18.3071ms
+{Exception]2021-12-14 17:30:54.862 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:30:54.862 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:30:54.863 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3098ms
+{Exception]2021-12-14 17:30:54.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:30:54.864 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:30:54.865 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:30:54.865 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:30:54.865 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:30:54.865 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:30:54.865 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:30:54.868 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:30:54.869 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:30:54.870 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 5.1705ms
+{Exception]2021-12-14 17:30:54.870 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:30:54.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.6462ms
+{Exception]2021-12-14 17:31:41.830 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:31:41.830 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:31:41.830 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.2640ms
+{Exception]2021-12-14 17:31:41.834 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44338/api/Transportations application/json 504
+{Exception]2021-12-14 17:31:41.835 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:31:41.835 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:31:41.835 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:31:41.835 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:31:41.835 +02:00 [INF] Route matched with {action = "InsertTransportation", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertTransportation(RivitaBackend.ModelsDTO.CreateTransportationDTO) on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:31:41.836 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:31:41.845 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Transportations] ([Id], [CargoAcceptanceDate], [CompanyName], [DepartureCountryTitle], [DepartureStationTitle], [DestinationCountryTitle], [DestinationStationTitle], [EtsngCargoCode], [GngCargoCode], [MovementEndDateInBelarus], [MovementStartDateInBelarus], [StationMovementBeginingBelarusTitle], [StationMovementEndBelarusTitle], [TransportationNumber], [TransportationType], [UserId], [WagonsCount], [Weight])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+{Exception]2021-12-14 17:31:41.847 +02:00 [INF] Executing CreatedAtRouteResult, writing value of type 'RivitaBackend.Models.Transportation'.
+{Exception]2021-12-14 17:31:41.847 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend) in 12.3873ms
+{Exception]2021-12-14 17:31:41.848 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.InsertTransportation (RivitaBackend)'
+{Exception]2021-12-14 17:31:41.852 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44338/api/Transportations application/json 504 - 201 640 application/json;+charset=utf-8 14.4615ms
+{Exception]2021-12-14 17:32:42.991 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:32:42.991 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:32:42.991 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.2923ms
+{Exception]2021-12-14 17:32:42.997 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:32:42.997 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:32:42.999 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:32:43.004 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:32:43.004 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:32:43.004 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:32:43.010 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:32:43.021 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:32:43.022 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:32:43.022 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 18.1977ms
+{Exception]2021-12-14 17:32:43.022 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:32:43.023 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2664 application/json;+charset=utf-8 25.8245ms
+{Exception]2021-12-14 17:32:43.237 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:32:43.237 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:32:43.237 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.3215ms
+{Exception]2021-12-14 17:32:43.239 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:32:43.240 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:32:43.240 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:32:43.240 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:32:43.240 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:32:43.240 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:32:43.241 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:32:43.243 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:32:43.244 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:32:43.245 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.4003ms
+{Exception]2021-12-14 17:32:43.245 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:32:43.247 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 7.2019ms
+{Exception]2021-12-14 17:35:07.397 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:07.397 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:07.397 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.7614ms
+{Exception]2021-12-14 17:35:07.405 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:07.406 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:07.406 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:07.406 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:07.406 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:07.406 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:35:07.407 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:07.417 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:35:07.418 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:07.419 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 12.8963ms
+{Exception]2021-12-14 17:35:07.419 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:07.420 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2664 application/json;+charset=utf-8 14.5334ms
+{Exception]2021-12-14 17:35:07.634 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:07.634 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:07.634 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2484ms
+{Exception]2021-12-14 17:35:07.636 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:07.636 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:07.636 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:07.636 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:07.636 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:07.637 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:35:07.637 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:07.640 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:35:07.641 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:07.641 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 4.458ms
+{Exception]2021-12-14 17:35:07.641 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:07.643 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 6.7734ms
+{Exception]2021-12-14 17:35:33.063 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:33.063 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:33.063 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3937ms
+{Exception]2021-12-14 17:35:33.071 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:33.071 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:33.072 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:33.073 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:33.073 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:33.073 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:35:33.085 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:33.093 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:35:33.094 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:33.095 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 21.0603ms
+{Exception]2021-12-14 17:35:33.095 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:33.101 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2664 application/json;+charset=utf-8 29.6812ms
+{Exception]2021-12-14 17:35:33.362 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:33.362 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:33.363 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2999ms
+{Exception]2021-12-14 17:35:33.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:33.364 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:33.364 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:33.365 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:33.365 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:33.365 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:35:33.365 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:33.374 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:35:33.378 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:33.378 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 13.5649ms
+{Exception]2021-12-14 17:35:33.378 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:33.379 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 14.6499ms
+{Exception]2021-12-14 17:35:37.998 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:37.998 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:37.998 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:37.998 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:37.998 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:37.999 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:35:37.999 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:38.001 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:35:38.008 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:38.012 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 13.5284ms
+{Exception]2021-12-14 17:35:38.013 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:38.013 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2664 application/json;+charset=utf-8 14.9609ms
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:38.256 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:35:38.257 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:38.258 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:35:38.259 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:38.260 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 3.4934ms
+{Exception]2021-12-14 17:35:38.260 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:38.260 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 4.4710ms
+{Exception]2021-12-14 17:35:46.430 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:46.430 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:46.430 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Transportations - - - 204 - - 0.3116ms
+{Exception]2021-12-14 17:35:46.433 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Transportations - -
+{Exception]2021-12-14 17:35:46.433 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:46.433 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:46.433 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:46.433 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:46.434 +02:00 [INF] Route matched with {action = "GetTransportations", controller = "Transportations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransportations() on controller RivitaBackend.Controllers.TransportationsController (RivitaBackend).
+{Exception]2021-12-14 17:35:46.436 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:46.442 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CargoAcceptanceDate], [t].[CompanyName], [t].[DepartureCountryTitle], [t].[DepartureStationTitle], [t].[DestinationCountryTitle], [t].[DestinationStationTitle], [t].[EtsngCargoCode], [t].[GngCargoCode], [t].[MovementEndDateInBelarus], [t].[MovementStartDateInBelarus], [t].[StationMovementBeginingBelarusTitle], [t].[StationMovementEndBelarusTitle], [t].[TransportationNumber], [t].[TransportationType], [t].[UserId], [t].[WagonsCount], [t].[Weight], [u].[Id], [u].[CompanyId], [u].[Password], [u].[PhoneNumber], [u].[TypeId], [u].[Username]
+FROM [Transportations] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+{Exception]2021-12-14 17:35:46.443 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.TransportationDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:46.444 +02:00 [INF] Executed action RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend) in 9.3497ms
+{Exception]2021-12-14 17:35:46.444 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.TransportationsController.GetTransportations (RivitaBackend)'
+{Exception]2021-12-14 17:35:46.444 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Transportations - - - 200 2664 application/json;+charset=utf-8 11.5110ms
+{Exception]2021-12-14 17:35:46.775 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:46.775 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:46.775 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44338/api/Companies - - - 204 - - 0.2171ms
+{Exception]2021-12-14 17:35:46.777 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44338/api/Companies - -
+{Exception]2021-12-14 17:35:46.778 +02:00 [INF] CORS policy execution successful.
+{Exception]2021-12-14 17:35:46.778 +02:00 [INF] Successfully validated the token.
+{Exception]2021-12-14 17:35:46.778 +02:00 [INF] Authorization was successful.
+{Exception]2021-12-14 17:35:46.778 +02:00 [INF] Executing endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:46.778 +02:00 [INF] Route matched with {action = "GetCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanies() on controller RivitaBackend.Controllers.CompaniesController (RivitaBackend).
+{Exception]2021-12-14 17:35:46.779 +02:00 [INF] Entity Framework Core 5.0.11 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+{Exception]2021-12-14 17:35:46.786 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Companies] AS [c]
+{Exception]2021-12-14 17:35:46.787 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RivitaBackend.ModelsDTO.CompanyDTO, RivitaBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+{Exception]2021-12-14 17:35:46.788 +02:00 [INF] Executed action RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend) in 9.7068ms
+{Exception]2021-12-14 17:35:46.788 +02:00 [INF] Executed endpoint 'RivitaBackend.Controllers.CompaniesController.GetCompanies (RivitaBackend)'
+{Exception]2021-12-14 17:35:46.788 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44338/api/Companies - - - 200 115 application/json;+charset=utf-8 11.0834ms
+{Exception]
