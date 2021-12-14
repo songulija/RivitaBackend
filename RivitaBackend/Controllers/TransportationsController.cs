@@ -61,7 +61,7 @@ namespace RivitaBackend.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetForSearch([FromQuery]int transportationNumber=0,[FromQuery]int etsngCargoCode=0,[FromQuery]int gngCargoCode=0,
-            [FromQuery]string cargoAcceptanceDateInBelarus = null, [FromQuery]string movementStartDateInBelarusFrom = null,
+            [FromQuery]string cargoAcceptanceDate = null, [FromQuery]string movementStartDateInBelarusFrom = null,
             [FromQuery]string movementStartDateInBelarusTo = null, [FromQuery]string movementEndDateInBelarusFrom = null,
             [FromQuery]string movementEndDateInBelarusTo = null, [FromQuery]string companyName = null)
         {
@@ -79,10 +79,12 @@ namespace RivitaBackend.Controllers
             {
                 query = query.Where(x => x.GngCargoCode == gngCargoCode);
             }
-            if(cargoAcceptanceDateInBelarus != null)
+            if(cargoAcceptanceDate != null)
             {
-                var cargoAcceptanceInBelarusDate = DateTime.Parse(cargoAcceptanceDateInBelarus);
-                query = query.Where(x => x.CargoAcceptanceDate == cargoAcceptanceInBelarusDate);
+                var aceptanceDate = DateTime.Parse(cargoAcceptanceDate);
+                query = query.Where(x => x.CargoAcceptanceDate.Year == aceptanceDate.Year &&
+                x.CargoAcceptanceDate.Month == aceptanceDate.Month &&
+                x.CargoAcceptanceDate.Day == aceptanceDate.Day);
                 /*DateTime.ParseExact(a.callDate, "yyyyMMddhhmm"*/
             }
             if(movementStartDateInBelarusFrom != null)

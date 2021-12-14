@@ -55,7 +55,7 @@ namespace RivitaBackend.Controllers
         }
 
         [HttpGet("transportation/{id:Guid}")]
-        [Authorize(Roles = "ADMINISTRATOR")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetWagonsByTransportation(Guid id)
