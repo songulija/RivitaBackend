@@ -13,8 +13,7 @@ namespace RivitaBackend.Configurations.Entities
         public void Configure(EntityTypeBuilder<User> builder)
         {
             var id = Guid.Parse("c9490c27-1b89-4e39-8f2e-99b48dcc709e");
-            var id2 = Guid.Parse("c9490c27-1b89-4e39-8f2e-99b48dcc901d");
-            var id3 = Guid.Parse("c9490c27-1b89-4e39-8f2e-99b48dcc102e");
+            var id2 = Guid.Parse("b9490c27-1b89-4e39-8f2e-99b48dcc901d");
             builder.HasData(
                 new User
                 {
@@ -33,17 +32,7 @@ namespace RivitaBackend.Configurations.Entities
                     Password = BCrypt.Net.BCrypt.HashPassword("Password@12"),
                     CompanyId = 1,
                     TypeId = 1
-                },
-                new User
-                {
-                    Id = id3,
-                    Username = "jonasmestilla",
-                    PhoneNumber = "+37060855183",
-                    Password = BCrypt.Net.BCrypt.HashPassword("Password@12"),
-                    CompanyId = 3,
-                    TypeId = 2
                 }
-
             );
         }
     }

@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "RivitaBackendResourceGroup",
+      "defaultValue": "RivitaBackend20211229160732ResourceGroup",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
@@ -51,7 +51,7 @@
             {
               "kind": "v12.0",
               "location": "[parameters('resourceLocation')]",
-              "name": "rivitabackenddbserver",
+              "name": "rivitabackenddatabasebserver",
               "type": "Microsoft.Sql/servers",
               "apiVersion": "2017-10-01-preview"
             },
@@ -63,11 +63,11 @@
               },
               "kind": "v12.0,user",
               "location": "[parameters('resourceLocation')]",
-              "name": "rivitabackenddbserver/RivitaBackend_db",
+              "name": "rivitabackenddatabasebserver/RivitaBackend_db",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
-                "rivitabackenddbserver"
+                "rivitabackenddatabasebserver"
               ]
             }
           ]

@@ -7,7 +7,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "RivitaBackendResourceGroup",
+      "defaultValue": "RivitaBackend20211229160732ResourceGroup",
       "metadata": {
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
       }
@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "RivitaBackend20211127230328",
+      "defaultValue": "RivitaBackend20211229160732",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }

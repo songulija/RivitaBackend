@@ -1,0 +1,1449 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RivitaBackend",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Accounts/types": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Accounts/register": {
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UserDTO"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "202": {
+            "description": "Success"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/Accounts/login": {
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LoginUserDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Companies": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Companies"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CompanyDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "201": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Companies/{id}": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "operationId": "GetCompany",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Companies"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateCompanyDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Companies"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Companies/update": {
+      "put": {
+        "tags": [
+          "Companies"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateCompanyDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Transportations": {
+      "get": {
+        "tags": [
+          "Transportations"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Transportations"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateTransportationDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "201": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Transportations/{id}": {
+      "get": {
+        "tags": [
+          "Transportations"
+        ],
+        "operationId": "GetTransportation",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Transportations"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateTransportationDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Transportations"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Transportations/search": {
+      "get": {
+        "tags": [
+          "Transportations"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "transportationNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "in": "query",
+            "name": "etsngCargoCode",
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "in": "query",
+            "name": "gngCargoCode",
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "in": "query",
+            "name": "cargoAcceptanceDate",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "movementStartDateInBelarusFrom",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "movementStartDateInBelarusTo",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "movementEndDateInBelarusFrom",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "movementEndDateInBelarusTo",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "companyName",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Transportations/update": {
+      "put": {
+        "tags": [
+          "Transportations"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateTransportationDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Wagons": {
+      "get": {
+        "tags": [
+          "Wagons"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Wagons"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/WagonDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "201": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Wagons/{id}": {
+      "get": {
+        "tags": [
+          "Wagons"
+        ],
+        "operationId": "GetWagon",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Wagons"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateWagonDTO"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Wagons"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Wagons/transportation/{id}": {
+      "get": {
+        "tags": [
+          "Wagons"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Wagons/update": {
+      "put": {
+        "tags": [
+          "Wagons"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateWagonDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": { }
+    },
+    "Company": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    },
+    "Wagon": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "transportationId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "transportation": {
+          "$ref": "#/definitions/Transportation"
+        },
+        "numberOfWagon": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "typeOfWagon": {
+          "type": "string"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "Transportation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "userId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "transportationNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "wagonsCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "transportationType": {
+          "type": "string"
+        },
+        "cargoAcceptanceDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementStartDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementEndDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "etsngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "departureStationTitle": {
+          "type": "string"
+        },
+        "departureCountryTitle": {
+          "type": "string"
+        },
+        "destinationStationTitle": {
+          "type": "string"
+        },
+        "destinationCountryTitle": {
+          "type": "string"
+        },
+        "stationMovementBeginingBelarusTitle": {
+          "type": "string"
+        },
+        "stationMovementEndBelarusTitle": {
+          "type": "string"
+        },
+        "wagons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Wagon"
+          }
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "typeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "companyId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "company": {
+          "$ref": "#/definitions/Company"
+        },
+        "transportations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Transportation"
+          }
+        }
+      }
+    },
+    "UserType": {
+      "required": [
+        "title"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    },
+    "WagonDTO": {
+      "required": [
+        "numberOfWagon",
+        "transportationId",
+        "typeOfWagon",
+        "weight"
+      ],
+      "type": "object",
+      "properties": {
+        "transportationId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "numberOfWagon": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "typeOfWagon": {
+          "type": "string"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "transportation": {
+          "$ref": "#/definitions/TransportationDTO"
+        }
+      }
+    },
+    "TransportationDTO": {
+      "required": [
+        "cargoAcceptanceDate",
+        "companyName",
+        "departureCountryTitle",
+        "departureStationTitle",
+        "destinationCountryTitle",
+        "destinationStationTitle",
+        "etsngCargoCode",
+        "gngCargoCode",
+        "movementStartDateInBelarus",
+        "stationMovementBeginingBelarusTitle",
+        "transportationNumber",
+        "transportationType",
+        "wagonsCount",
+        "weight"
+      ],
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "transportationNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "wagonsCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "transportationType": {
+          "type": "string"
+        },
+        "cargoAcceptanceDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementStartDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementEndDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "etsngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "departureStationTitle": {
+          "type": "string"
+        },
+        "departureCountryTitle": {
+          "type": "string"
+        },
+        "destinationStationTitle": {
+          "type": "string"
+        },
+        "destinationCountryTitle": {
+          "type": "string"
+        },
+        "stationMovementBeginingBelarusTitle": {
+          "type": "string"
+        },
+        "stationMovementEndBelarusTitle": {
+          "type": "string"
+        },
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/UserDTO"
+        },
+        "wagons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WagonDTO"
+          }
+        }
+      }
+    },
+    "UserDTO": {
+      "required": [
+        "companyId",
+        "id",
+        "password",
+        "typeId",
+        "username"
+      ],
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "typeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "companyId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "company": {
+          "$ref": "#/definitions/Company"
+        },
+        "transportations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransportationDTO"
+          }
+        }
+      }
+    },
+    "LoginUserDTO": {
+      "required": [
+        "password",
+        "username"
+      ],
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "CompanyDTO": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserDTO"
+          }
+        }
+      }
+    },
+    "UpdateCompanyDTO": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateTransportationDTO": {
+      "required": [
+        "cargoAcceptanceDate",
+        "companyName",
+        "departureCountryTitle",
+        "departureStationTitle",
+        "destinationCountryTitle",
+        "destinationStationTitle",
+        "etsngCargoCode",
+        "gngCargoCode",
+        "movementStartDateInBelarus",
+        "stationMovementBeginingBelarusTitle",
+        "transportationNumber",
+        "transportationType",
+        "wagonsCount",
+        "weight"
+      ],
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "transportationNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "wagonsCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "transportationType": {
+          "type": "string"
+        },
+        "cargoAcceptanceDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementStartDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementEndDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "etsngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "departureStationTitle": {
+          "type": "string"
+        },
+        "departureCountryTitle": {
+          "type": "string"
+        },
+        "destinationStationTitle": {
+          "type": "string"
+        },
+        "destinationCountryTitle": {
+          "type": "string"
+        },
+        "stationMovementBeginingBelarusTitle": {
+          "type": "string"
+        },
+        "stationMovementEndBelarusTitle": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateTransportationDTO": {
+      "required": [
+        "cargoAcceptanceDate",
+        "companyName",
+        "departureCountryTitle",
+        "departureStationTitle",
+        "destinationCountryTitle",
+        "destinationStationTitle",
+        "etsngCargoCode",
+        "gngCargoCode",
+        "movementStartDateInBelarus",
+        "stationMovementBeginingBelarusTitle",
+        "transportationNumber",
+        "transportationType",
+        "wagonsCount",
+        "weight"
+      ],
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "transportationNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "wagonsCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "transportationType": {
+          "type": "string"
+        },
+        "cargoAcceptanceDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementStartDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "movementEndDateInBelarus": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "etsngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gngCargoCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "departureStationTitle": {
+          "type": "string"
+        },
+        "departureCountryTitle": {
+          "type": "string"
+        },
+        "destinationStationTitle": {
+          "type": "string"
+        },
+        "destinationCountryTitle": {
+          "type": "string"
+        },
+        "stationMovementBeginingBelarusTitle": {
+          "type": "string"
+        },
+        "stationMovementEndBelarusTitle": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateWagonDTO": {
+      "required": [
+        "numberOfWagon",
+        "transportationId",
+        "typeOfWagon",
+        "weight"
+      ],
+      "type": "object",
+      "properties": {
+        "transportationId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "numberOfWagon": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "typeOfWagon": {
+          "type": "string"
+        },
+        "weight": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
