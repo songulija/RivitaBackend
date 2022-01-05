@@ -82,9 +82,7 @@ namespace RivitaBackend.Controllers
             if(cargoAcceptanceDate != null)
             {
                 var aceptanceDate = DateTime.Parse(cargoAcceptanceDate);
-                query = query.Where(x => x.CargoAcceptanceDate.Year == aceptanceDate.Year &&
-                x.CargoAcceptanceDate.Month == aceptanceDate.Month &&
-                x.CargoAcceptanceDate.Day == aceptanceDate.Day);
+                query = query.Where(x => x.CargoAcceptanceDate >= aceptanceDate);
                 /*DateTime.ParseExact(a.callDate, "yyyyMMddhhmm"*/
             }
             if(movementStartDateInBelarusFrom != null)
